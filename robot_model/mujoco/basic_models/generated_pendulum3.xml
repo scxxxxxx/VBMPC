@@ -1,0 +1,21 @@
+<mujoco model="pendulum">
+    <include file="../worlds/world.xml"/>
+    <compiler coordinate="local" inertiafromgeom="true"/>
+    <default>
+        <joint damping="0"/>
+        <geom contype="0" friction="0 0 0"/>
+    </default>
+    <option gravity="0 0 -9.81" integrator="RK4"/>
+    <size nstack="3000"/>
+    <worldbody>
+        <geom name="rail" pos="0 0 1.5" quat="0.707 0 0.707 0" rgba="0.3 0.3 0.7 1" size="0.02 1" type="capsule"/>
+        <body name="pole0" pos="0 0 1.5">
+            <camera name="track_front" mode="fixed" pos="0 4 0" xyaxes="-1 0 0 0 0 1"/>
+            <!--<joint axis="1 0 0" limited="true" margin="0.01" name="slider" pos="0 0 0" range="-1 1" type="slide"/>-->
+            <geom name="geom_b0" pos="0 0 0" quat="0.707 0 0.707 0" size="0.1 0.01" type="capsule" rgba="0.7 0.7 0 1"/>
+            <site name="pole0_0" pos="0 0 0" size="0.01 0.01"/>
+            <site name="pole0_1" pos="0 0 0" size="0.01 0.01"/>
+
+        <body name="pole1" pos="0 0 0"><geom name="geom_b1" fromto="0 0 0 0 0 0.5487922209913434" rgba="0.588 0.909 0.972 1" size="0.045 0.2743961104956717" type="capsule" mass="0.7062455129986474"/><site name="pole1_0" pos="0 0 0" size="0.01 0.01"/><site name="pole1_1" pos="0 0 0.5487922209913434" size="0.01 0.01"/><joint name="pendulum1" axis="0 1 0" pos="0 0 0" type="hinge"/><body name="pole2" pos="0 0 0.5487922209913434"><geom name="geom_b2" fromto="0 0 0 0 0 0.4608648715081425" rgba="0.588 0.909 0.972 1" size="0.045 0.23043243575407124" type="capsule" mass="0.6949257463898793"/><site name="pole2_0" pos="0 0 0" size="0.01 0.01"/><site name="pole2_1" pos="0 0 0.4608648715081425" size="0.01 0.01"/><joint name="pendulum2" axis="0 1 0" pos="0 0 0" type="hinge"/><body name="pole3" pos="0 0 0.4608648715081425"><geom name="geom_b3" fromto="0 0 0 0 0 0.565656439890942" rgba="0.588 0.909 0.972 1" size="0.045 0.282828219945471" type="capsule" mass="0.8444899908360959"/><site name="pole3_0" pos="0 0 0" size="0.01 0.01"/><site name="pole3_1" pos="0 0 0.565656439890942" size="0.01 0.01"/><site name="tip" pos="0 0 0.565656439890942" size="0.01 0.01"/><joint name="pendulum3" axis="0 1 0" pos="0 0 0" type="hinge"/></body></body></body></body>
+    </worldbody>
+<actuator><motor name="pendulum1_motor" joint="pendulum1" forcerange="-50 50" ctrlrange="-20 20"/><motor name="pendulum2_motor" joint="pendulum2" forcerange="-50 50" ctrlrange="-20 20"/><motor name="pendulum3_motor" joint="pendulum3" forcerange="-50 50" ctrlrange="-20 20"/></actuator></mujoco>

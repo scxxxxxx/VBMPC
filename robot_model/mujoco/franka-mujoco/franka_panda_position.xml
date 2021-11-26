@@ -1,0 +1,18 @@
+<mujoco model="franka_panda v200">
+    <size njmax="8000" nconmax="4000" nuser_actuator="5"/>
+    <compiler angle="radian" coordinate="local" balanceinertia="true" inertiafromgeom="auto"  meshdir=''/>
+    <option timestep="0.002"/>
+
+    <include file="../worlds/world.xml"/>
+
+
+    <include file="assets/assets.xml"/>
+
+
+    <worldbody>
+        <include file="assets/chain0.xml"/>
+    </worldbody>
+
+    <include file='assets/actuators0.xml'/>
+
+</mujoco>

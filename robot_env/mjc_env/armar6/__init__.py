@@ -1,0 +1,4 @@
+from robot_env.mjc_env.armar6.armar6_bimanual_table_env import Armar6BimanualTableEnv
+from robot_env.mjc_env.armar6.armar6_bimanual_env import Armar6BimanualEnv
+from robot_env.mjc_env.armar6.armar6_left_arm_env import Armar6LeftArmEnv
+from robot_env.mjc_env.armar6.armar6_right_arm_env import Armar6RightArmEnv

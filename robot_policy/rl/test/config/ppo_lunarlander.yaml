@@ -1,0 +1,50 @@
+agent:
+    env_name:               LunarLanderContinuous-v2
+    env_config:             {render: True, action_wrapper: False, make: True}
+    seed:                   123
+    use_gpu:                True
+    render_every_n_rollout: 50
+    play_every_n_rollout:   50
+
+    # train
+    rollout_steps:          1000
+    max_steps:              500000
+    batch_size:             32
+    train_mini_epochs:      4
+    max_grad_norm:          0.5
+
+    # on policy train
+    gamma:                  0.999
+    gae_lambda:             0.98
+    ent_coef:               0.01
+    val_coef:               0.5
+    use_sde:                False
+    sde_sample_freq:        -1
+    num_env:                1
+
+    # ppo train
+    clip_range:             0.2
+    # clip_range_vf:          None
+    # target_kl:              0.01
+
+    policy_type:            ActorCriticSimplePolicy
+
+policy:
+    network_type:           mlp
+    network_config:
+        net_struct:         {shared: [], policy: [ 64, 64 ], value: [ 64, 64 ]}
+        activation_fn:      ReLU
+        log_std_init:       0.0
+    optimizer_type:         Adam
+    optimizer_config:
+        lr:                 0.0003
+    scheduler_type:         ReduceLROnPlateau
+    scheduler_config:
+        patience:           10
+        min_lr:             1e-6
+        factor:             0.5
+        verbose:            False
+    squash_output:          True
+
+
+

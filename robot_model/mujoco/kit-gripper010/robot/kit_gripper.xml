@@ -1,0 +1,214 @@
+<mujocoinclude>
+    <compiler angle="degree" coordinate="local" inertiafromgeom="auto" settotalmass="2.3"/>
+
+    <default class="main">
+        <geom friction="1 0.005 0.0001" />
+        <joint damping="0.5" stiffness="0" armature="0.5" />
+        <position kp="100" />
+
+        <default class="body">
+        </default>
+
+        <!-- Default class for end-effector visualizations -->
+        <default class="endeffector">
+            <geom rgba="0 1 0 1" pos="0 0 0" size="0.005" type="sphere" conaffinity="0" contype="0"/>
+        </default>
+
+        <!-- Default class for target visualizations -->
+        <default class="target">
+            <geom rgba="1 0 0 1" pos="0 0 0" size="0.005" type="sphere" conaffinity="0" contype="0"/>
+        </default>
+    </default>
+
+
+    <asset>
+        <texture builtin="checker" height="100" name="texplane" rgb1="0 0 0" rgb2="0.8 0.8 0.8" type="2d" width="100"/>
+        <material name="MatPlane" reflectance="0" shininess="1" specular="1" texrepeat="10 10" texture="texplane" />
+        
+        <mesh file="../robot/mesh/01_basis_m.stl" name="m_base" />
+        <mesh file="../robot/mesh/02_pg_basis_m.stl" name="m_pg_base" />
+        <mesh file="../robot/mesh/02_pg_arm1_m.stl" name="m_pg_arm1" />
+        <mesh file="../robot/mesh/02_pg_arm2_m.stl" name="m_pg_arm2" />
+        <mesh file="../robot/mesh/02_pg_pad_m.stl" name="m_pg_pad" />
+        <mesh file="../robot/mesh/03_turn_m.stl" name="m_turn" />
+        <mesh file="../robot/mesh/04_arm1_m.stl" name="m_arm1" />
+        <mesh file="../robot/mesh/05_arm2_m.stl" name="m_arm2" />
+        <mesh file="../robot/mesh/06_arm3_m.stl" name="m_arm3" />
+        <mesh file="../robot/mesh/06_bithalt_m.stl" name="m_bit" />
+    </asset>
+
+    <worldbody>
+        <geom conaffinity="0" contype="0" material="MatPlane" condim="3" name="worldfloor" pos="0 0 0" size="0.5 0.5 0.5" type="plane" rgba="1 1 1 0.3"/>
+        <light pos="0 0 1"/>
+
+        <body name="base" pos="0 0 0.04" quat=".707 .707 0 0" childclass="body">
+            <geom type="mesh" mesh="m_base"/>
+
+            <body name="KIT_Gripper_Bit_Storage_1" pos="0.025 0.045 0.105" quat="0 0 0 1">
+                <geom class="target"/>
+            </body>
+            
+            <body name="KIT_Gripper_Bit_Storage_2" pos="0.041 0.045 0.111" quat="0 0 0 1">
+                <geom class="target"/>
+            </body>
+            
+            <body name="KIT_Gripper_Bit_Storage_3" pos="0.057 0.045 0.114" quat="0 0 0 1">
+                <geom class="target"/>
+            </body>
+            
+            <body name="KIT_Gripper_Bit_Storage_4" pos="0.073 0.045 0.114" quat="0 0 0 1">
+                <geom class="target"/>
+            </body>
+            
+            <body name="KIT_Gripper_Bit_Storage_5" pos="0.09 0.045 0.111" quat="0 0 0 1">
+                <geom class="target"/>
+            </body>
+            
+            <body name="KIT_Gripper_Bit_Storage_6" pos="0.105 0.045 0.105" quat="0 0 0 1">
+                <geom class="target"/>
+            </body>
+            
+            <body name="gripper_base" pos="0 0 0">
+                <geom type="mesh" mesh="m_pg_base"/>    
+                <joint name="KIT_Gripper_PG_Rotation" axis="1 0 0" limited="true" range="-180 180"/>
+
+                <body name="gripper_right_arm_1" pos="0.138 0 -0.030" quat="0 0 -0.707 0.707">
+                    <joint name="KIT_Gripper_PG_Right_Arm_1" axis="0 0 1" limited="true" range="-75 0"/>
+                    <geom type="mesh" mesh="m_pg_arm1"/>
+
+                    <body name="gripper_right_arm_pad" pos="-0.095 -0.02 0" quat="0.5 0.5 0.5 0.5">
+                        <joint name="KIT_Gripper_PG_Right_Arm_Pad" axis="0 1 0" />
+                        <geom type="mesh" mesh="m_pg_pad"/>
+
+                        <body name="KIT_Gripper_PG_Right_Arm_TCP" pos="-0.007 0 0" quat="0.5 0.5 0.5 0.5">
+                            <geom class="endeffector"/>
+                        </body>
+                    </body>
+                </body>
+
+                <body name="gripper_right_arm_2" pos="0.133659 0 -0.0546202" quat="0 -0.707 0 0.707">
+                    <joint name="KIT_Gripper_PG_Right_Arm_2" axis="0 1 0"/>
+                    <geom type="mesh" mesh="m_pg_arm2"/>
+                </body>
+
+                <body name="gripper_left_arm_1" pos="0.138 0 0.030" quat="0 0 0.707 0.707">
+                    <joint name="KIT_Gripper_PG_Left_Arm_1" axis="0 0 1" limited="true" range="-75 0"/>
+                    <geom type="mesh" mesh="m_pg_arm1"/>
+
+                    <body name="gripper_left_arm_pad" pos="-0.095 -0.02 0" quat="0.5 0.5 0.5 0.5">
+                        <joint name="KIT_Gripper_PG_Left_Arm_Pad" axis="0 1 0" />
+                        <geom type="mesh" mesh="m_pg_pad"/>
+
+                        <body name="KIT_Gripper_PG_Left_Arm_TCP" pos="-0.007 0 0" quat="0.5 0.5 0.5 0.5">
+                            <geom class="endeffector"/>
+                        </body>
+                    </body>
+                </body>
+
+                <body name="gripper_left_arm_2" pos="0.133659 0 0.0546202" quat="-0.707 0 0.707 0">
+                    <joint name="KIT_Gripper_PG_Left_Arm_2" axis="0 1 0"/>
+                    <geom type="mesh" mesh="m_pg_arm2"/>
+                </body>
+            </body>
+
+            <body name="arm1" pos="0.065 0.106 0.0195" quat="0 1 0 0" childclass="body">
+                <geom type="mesh" mesh="m_turn" contype="0" conaffinity="0"/>
+                <joint name="KIT_Gripper_Arm_1" axis="0 1 0" limited="true" range="-45 135" />
+
+                <body name="arm2">
+                    <joint name="KIT_Gripper_Arm_2" axis="0 0 1" limited="true" range="-90 60" />
+                    <geom type="mesh" mesh="m_arm1" />
+
+                    <body name="arm3" pos="0.0848528 -0.0848528 0" quat="0.9239 0 0 -0.3827">
+                        <joint name="KIT_Gripper_Arm_3" axis="0 0 1" limited="true" range="-90 60" />
+                        <geom type="mesh" mesh="m_arm2" />
+
+                        <body name="arm4" pos="0 0.120 0" quat="0.9239 0 0 -0.3827">
+                            <geom type="mesh" mesh="m_arm3"/>
+                            <joint name="KIT_Gripper_Arm_4" axis="0 0 1" limited="true" range="-90 60" />
+
+                            <body name="bit" pos="-0.0425 0.030 0.013" quat="0.5 -0.5 -0.5 0.5">
+                                <geom type="mesh" mesh="m_bit"/>
+                                <joint name="KIT_Gripper_Arm_Bit" axis="0 0 1" />
+
+                                <body name="KIT_Gripper_Arm_Bit_TCP" pos="0 0 0.0233">
+                                    <geom class="endeffector" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <contact>
+        <exclude body1="base" body2="gripper_base"/>
+        <exclude body1="gripper_right_arm_1" body2="gripper_right_arm_2"/>
+        <exclude body1="gripper_right_arm_1" body2="gripper_right_arm_pad"/>
+        <exclude body1="gripper_right_arm_2" body2="gripper_right_arm_pad"/>
+        <exclude body1="gripper_left_arm_1" body2="gripper_left_arm_2"/>
+        <exclude body1="gripper_left_arm_1" body2="gripper_left_arm_pad"/>
+        <exclude body1="gripper_left_arm_2" body2="gripper_left_arm_pad"/>
+    </contact>
+
+    <equality>
+        <joint name="parallel_gripper_constraint_1" joint1="KIT_Gripper_PG_Left_Arm_1" joint2="KIT_Gripper_PG_Right_Arm_1" polycoef="0 1 0 0 0"/>
+        <joint name="parallel_gripper_constraint_2" joint1="KIT_Gripper_PG_Right_Arm_1" joint2="KIT_Gripper_PG_Right_Arm_2" polycoef="0 1 0 0 0"/>
+        <joint name="parallel_gripper_constraint_3" joint1="KIT_Gripper_PG_Left_Arm_1" joint2="KIT_Gripper_PG_Left_Arm_2" polycoef="0 1 0 0 0"/>
+        <joint name="parallel_gripper_constraint_4" joint1="KIT_Gripper_PG_Right_Arm_1" joint2="KIT_Gripper_PG_Right_Arm_Pad" polycoef="0 -1 0 0 0"/>
+        <joint name="parallel_gripper_constraint_5" joint1="KIT_Gripper_PG_Left_Arm_1" joint2="KIT_Gripper_PG_Left_Arm_Pad" polycoef="0 -1 0 0 0"/>
+    </equality>
+
+    <actuator>
+        <position joint="KIT_Gripper_PG_Rotation" name="KIT_Gripper_PG_Rotation_pos"/>
+        <position joint="KIT_Gripper_PG_Right_Arm_1" name="KIT_Gripper_PG_Close_pos"/>
+        <position joint="KIT_Gripper_Arm_1" name="KIT_Gripper_Arm_1_pos"/>
+        <position joint="KIT_Gripper_Arm_2" name="KIT_Gripper_Arm_2_pos"/>
+        <position joint="KIT_Gripper_Arm_3" name="KIT_Gripper_Arm_3_pos"/>
+        <position joint="KIT_Gripper_Arm_4" name="KIT_Gripper_Arm_4_pos"/>
+        <position joint="KIT_Gripper_Arm_Bit" name="KIT_Gripper_Arm_Bit_pos"/>
+
+        <velocity joint="KIT_Gripper_PG_Rotation" name="KIT_Gripper_PG_Rotation_vel"/>
+        <velocity joint="KIT_Gripper_PG_Right_Arm_1" name="KIT_Gripper_PG_Close_vel"/>
+        <velocity joint="KIT_Gripper_Arm_1" name="KIT_Gripper_Arm_1_vel"/>
+        <velocity joint="KIT_Gripper_Arm_2" name="KIT_Gripper_Arm_2_vel"/>
+        <velocity joint="KIT_Gripper_Arm_3" name="KIT_Gripper_Arm_3_vel"/>
+        <velocity joint="KIT_Gripper_Arm_4" name="KIT_Gripper_Arm_4_vel"/>
+        <velocity joint="KIT_Gripper_Arm_Bit" name="KIT_Gripper_Arm_Bit_vel"/>
+
+        <motor joint="KIT_Gripper_PG_Rotation" name="KIT_Gripper_PG_Rotation_torque"/>
+        <motor joint="KIT_Gripper_PG_Right_Arm_1" name="KIT_Gripper_PG_Close_torque"/>
+        <motor joint="KIT_Gripper_Arm_1" name="KIT_Gripper_Arm_1_torque"/>
+        <motor joint="KIT_Gripper_Arm_2" name="KIT_Gripper_Arm_2_torque"/>
+        <motor joint="KIT_Gripper_Arm_3" name="KIT_Gripper_Arm_3_torque"/>
+        <motor joint="KIT_Gripper_Arm_4" name="KIT_Gripper_Arm_4_torque"/>
+        <motor joint="KIT_Gripper_Arm_Bit" name="KIT_Gripper_Arm_Bit_torque"/>
+    </actuator>
+
+    <sensor>
+        <jointpos name="KIT_Gripper_PG_Rotation_pos" joint="KIT_Gripper_PG_Rotation" />
+        <jointpos name="KIT_Gripper_PG_Close_pos" joint="KIT_Gripper_PG_Right_Arm_1" />
+        <jointpos name="KIT_Gripper_Arm_1_pos" joint="KIT_Gripper_Arm_1" />
+        <jointpos name="KIT_Gripper_Arm_2_pos" joint="KIT_Gripper_Arm_2" />
+        <jointpos name="KIT_Gripper_Arm_3_pos" joint="KIT_Gripper_Arm_3" />
+        <jointpos name="KIT_Gripper_Arm_4_pos" joint="KIT_Gripper_Arm_4" />
+        <jointpos name="KIT_Gripper_Arm_Bit_pos" joint="KIT_Gripper_Arm_Bit" />
+
+        <jointvel name="KIT_Gripper_PG_Rotation_vel" joint="KIT_Gripper_PG_Rotation" />
+        <jointvel name="KIT_Gripper_PG_Close_vel" joint="KIT_Gripper_PG_Right_Arm_1" />
+        <jointvel name="KIT_Gripper_Arm_1_vel" joint="KIT_Gripper_Arm_1" />
+        <jointvel name="KIT_Gripper_Arm_2_vel" joint="KIT_Gripper_Arm_2" />
+        <jointvel name="KIT_Gripper_Arm_3_vel" joint="KIT_Gripper_Arm_3" />
+        <jointvel name="KIT_Gripper_Arm_4_vel" joint="KIT_Gripper_Arm_4" />
+        <jointvel name="KIT_Gripper_Arm_Bit_vel" joint="KIT_Gripper_Arm_Bit" />
+
+        <actuatorfrc name="KIT_Gripper_PG_Rotation_torque" actuator="KIT_Gripper_PG_Rotation_torque" />
+        <actuatorfrc name="KIT_Gripper_PG_Close_torque" actuator="KIT_Gripper_PG_Close_torque" />
+        <actuatorfrc name="KIT_Gripper_Arm_1_torque" actuator="KIT_Gripper_Arm_1_torque" />
+        <actuatorfrc name="KIT_Gripper_Arm_2_torque" actuator="KIT_Gripper_Arm_2_torque" />
+        <actuatorfrc name="KIT_Gripper_Arm_3_torque" actuator="KIT_Gripper_Arm_3_torque" />
+        <actuatorfrc name="KIT_Gripper_Arm_4_torque" actuator="KIT_Gripper_Arm_4_torque" />
+        <actuatorfrc name="KIT_Gripper_Arm_Bit_torque" actuator="KIT_Gripper_Arm_Bit_torque" />
+    </sensor>
+</mujocoinclude>

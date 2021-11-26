@@ -1,0 +1,11 @@
+<mujocoinclude>
+    <default>
+        <default class="bouncy">
+            <geom condim="6" priority="1" friction="0.5 0.001 0.001" solref="-5000 -5" solimp="0.5 0.9 0.01"/>
+        </default>
+    </default>
+	<asset>
+        <texture name="tennis_ball" file="../../components/texture/tennis_ball.png" gridsize="3 4" gridlayout=".U..LFRB.D.."/>
+        <material name="tennis_ball" texture="tennis_ball"/>
+    </asset>
+</mujocoinclude>

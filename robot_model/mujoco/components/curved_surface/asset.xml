@@ -1,0 +1,5 @@
+<mujocoinclude>
+	<asset>
+        <mesh name="curved_surface" scale="0.0015 0.0015 0.0015" file="../../components/curved_surface/curved_surface.stl"/>
+	</asset>
+</mujocoinclude>

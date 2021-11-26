@@ -1,0 +1,42 @@
+<mujoco model="Armar6">
+    <size njmax="8000" nconmax="4000"/>
+    <include file="../../worlds/world_tennis_court.xml"/>
+    <compiler angle="radian" coordinate="local" balanceinertia="true" inertiafromgeom="auto"  meshdir='../robot/mesh'/>
+    <default>
+        <default class="Armar6">
+            <!--Add default values for Armar6 here.-->
+            <mesh scale="1 1 1"/>
+<!--            <geom condim="4" material='Armar6'/>-->
+            <joint damping="50" frictionloss="0.05" />
+            <motor gear="1" ctrllimited="true"/>
+            <velocity kv="200"/>
+            <position kp="200"/>
+        </default>
+        <default class="viz">
+            <geom contype="0" conaffinity="0" group="1" type="mesh" density="0" material="kitgreen"/>
+        </default>
+
+        <!-- =======================================================================================
+        define group 2 properties for collision which is disabled by default in mujoco,
+        press '2' on keyboard to enable
+        ======================================================================================= -->
+        <default class="cls">
+            <geom group="2" material='kitgreen'/>
+        </default>
+
+        <default class="cls_f">
+            <geom group="2" rgba='0. 0.588 0.509 0.5' friction="1 1 1" condim="6" conaffinity="0" contype="1"/>
+        </default>
+
+        <default class="FTsensor">
+            <site type="cylinder" size="0.05 0.02" group="3" rgba=".1 .1 .9 1"/>
+        </default>
+    </default>
+    <asset>
+        <material name='kitgreen'  rgba='0. 0.588 0.509 1'/>
+        <material name='collision' rgba='0.1 0.5 0.9 0'/>
+        <material name='obstacle'  rgba='0.2 0.6 0.2 1'/>
+    </asset>
+    <include file="../robot/Armar6-SH-Dual-Arm.xml"/>
+
+</mujoco>

@@ -1,0 +1,41 @@
+<mujoco>
+    <statistic extent="2" meansize=".05"/>
+    <option timestep="0.001" solver="Newton" iterations="50" tolerance="1e-5" jacobian="sparse" cone="pyramidal" gravity='0 0 -9.81'/>
+
+    <visual>
+        <rgba haze="0.15 0.25 0.35 1"/>
+        <quality shadowsize="2048"/>
+        <map stiffness="700" shadowscale="0.5" fogstart="10" fogend="15" zfar="40" haze="0.3"/>
+        <headlight ambient=".2 .2 .2" diffuse=".8 .8 .8" specular="0.1 0.1 0.1"/>
+    </visual>
+
+
+    <asset>
+<!--        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="512"/>-->
+        <texture name="skybox" type="skybox" builtin="gradient" rgb1=".1 .1 .30" rgb2="0 0 0" width="800" height="800" mark="random" markrgb="1 1 1"/>
+
+        <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2"
+            width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
+        <material name="matplane" reflectance="0.0" texture="texplane" texrepeat="1 1" texuniform="true"/>
+    </asset>
+
+
+	<include file="../../components/tennis/tennis_ball_asset.xml"/>
+	<include file="../../components/tennis/tennis_wall_asset.xml"/>
+
+
+    <worldbody>
+        <geom name="ground" type="plane" size="0 0 1" pos="0 0 0" quat="1 0 0 0" material="matplane" condim="6"/>
+        <light mode='trackcom' pos='0 0 5' dir='0 0 -1'/>
+        <light directional='true' pos='0 0 3' dir='0 0 -1' diffuse='0.2 0.2 0.2' specular='0 0 0'/>
+
+        <geom name="wall" type="plane" pos="0 5 3" size="5 3 10" material="tennis_wall_background" zaxis="0 -1 0"/>
+
+		<body name="tennis_ball_1" pos="0 1 3" euler="0 0 0">
+			<include file="../../components/tennis/tennis_ball_chain.xml"/>
+		</body>
+
+
+    </worldbody>
+
+</mujoco>

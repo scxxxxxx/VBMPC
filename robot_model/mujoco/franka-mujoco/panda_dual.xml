@@ -1,0 +1,106 @@
+<mujoco model="franka">
+    <size njmax="8000" nconmax="4000" nuser_actuator="5"/>
+    <compiler angle="radian" coordinate="local" balanceinertia="true" inertiafromgeom="auto"  meshdir=''/>
+    <option timestep="0.002"/>
+
+    <include file="../worlds/world.xml"/>
+    <include file="assets/assets.xml"/>
+
+    <default>
+        <default class='torso'>
+            <geom group='2' contype='0' conaffinity='0' rgba=".95 .99 .92 1"/>
+        </default>/
+    </default>
+
+    <worldbody>
+        <body name='torso' childclass='torso'>
+            <geom name='shoulders' type='capsule' size='.09' fromto='.15 0 1.6 -.15 0 1.6'/>
+            <geom name='absL' type='capsule' size='.09' fromto='.15 0 1.6 0.05 0 1.05'/>
+            <geom name='absR' type='capsule' size='.09' fromto='-.15 0 1.6 -.05 0 1.05'/>
+            <geom name='legs' type='capsule' size='.135' fromto='0 0 1.05 0 0 0.05'/>
+
+            <body name='leftarm' pos='0 0 1.6' euler='0 -1.57 1.57'>
+                <include file="assets/chain0.xml"/>
+            </body>
+
+            <body name='rightarm' pos='0 0 1.6' euler='0 1.57 1.57'>
+                <include file="assets/chain1.xml"/>
+            </body>
+
+        </body>
+
+    </worldbody>
+
+    <include file='assets/actuators2.xml'/>
+    <include file='assets/actuators3.xml'/>
+
+</mujoco>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

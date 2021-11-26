@@ -1,0 +1,60 @@
+policy:
+  use_gpu: 1
+  in_feats: 1
+  structures:
+    - { ide: 32, sin: 32, cos: 32, mul: 0, mul_mode: 1 }
+    - { ide: 32, sin: 32, cos: 32, mul: 0, mul_mode: 2 }
+    #  - {ide: 1, div: 1, div_mode: 2}
+    - { ide: 1 }
+
+  lamb: 1e-5
+  theta: 0.5
+
+#  omega: 30
+#  freq_bias: neuron
+
+  omega: 1   # this also works for polynomial
+  freq_bias: None
+
+  #omega: 100  # for polynomial
+  #freq_bias: neuron
+
+  train:
+    batch_size: 100
+    max_epochs: 200
+    gamma: 0.5
+    train_data_ratio: 0.9
+    learning_rate: 1e-2
+    learning_rate_div: 1e-3
+    min_learning_rate: 1e-6
+    plot_train_process: False
+    sample_batch_data_flag: True
+    pruning: True
+    l1_norm: True
+    min_t2: 190
+    min_t1: 50
+
+reward:
+  use_gpu: 1
+
+  type: fnn
+  structure: [ 32, 32 ]
+  activation: relu
+
+#  # qcnn
+#  structure: [ 30, 30 ]
+#  use_quasi_convex: True
+#  strict_quasi: False
+#  with_gate: True
+#  require_input_grad: True
+
+  train:
+    max_epochs: 200
+    gamma: 0.5
+    train_data_ratio: 1.0
+    batch_size: 50
+    learning_rate: 1e-2
+    min_learning_rate: 1e-6
+    plot_train_process: False
+    sample_batch_data_flag: True
+    save_model_steps: 50

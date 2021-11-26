@@ -1,0 +1,30 @@
+env_name:               RocketLander-v0
+render:                 True
+seed:                   123
+env_init_state:         None
+use_gpu:                True
+
+# policy and training
+horizon_scale:          0.01
+return_scale:           0.02
+elite_population:       40
+learning_rate:          0.001
+hidden_size:            32
+stop_on_solved:         False
+target_return:          200
+
+# buffer and sampling
+buffer_capacity:        500
+exploration_scale:      1.0
+batch_size:             768
+
+# simulation
+n_main_iter:            700
+n_episodes_per_iter:    20
+n_updates_per_iter:     100
+n_warm_up_episodes:     10
+n_evals:                1
+evaluate_every:         10
+max_reward:             250
+max_steps_per_episode:  300
+max_steps_reward:       -50

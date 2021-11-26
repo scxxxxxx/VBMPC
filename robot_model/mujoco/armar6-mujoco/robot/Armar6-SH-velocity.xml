@@ -1,0 +1,524 @@
+<mujoco model="Armar6">
+    <compiler angle="radian" balanceinertia="true"/>
+    <default>
+        <default class="Armar6">
+            <!--Add default values for Armar6 here.-->
+            <joint frictionloss="1" damping="0"/>
+            <mesh scale="1 1 1"/>
+            <geom condim="4"/>
+            <position kp="1"/>
+            <velocity kv="1"/>
+        </default>
+    </default>
+    <asset>
+        <texture type="skybox" builtin="gradient" width="128" height="128" rgb1="0.8 0.9 0.95" rgb2="0.4 0.6 0.8"/>
+        <mesh class="Armar6" name="ArmL1_Cla1_body" file="mesh/2h09020_arml_t12.stl"/>
+        <mesh class="Armar6" name="ArmL2_Sho1_body" file="mesh/2h09030_arml_t23.stl"/>
+        <mesh class="Armar6" name="ArmL3_Sho2_body" file="mesh/2h09040_arml_t34.stl"/>
+        <mesh class="Armar6" name="ArmL4_Sho3_body" file="mesh/2h09050_arml_t45.stl"/>
+        <mesh class="Armar6" name="ArmL5_Elb1_body" file="mesh/2h09060_arml_t56.stl"/>
+        <mesh class="Armar6" name="ArmL6_Elb2_body" file="mesh/2h09070_arml_t67.stl"/>
+        <mesh class="Armar6" name="ArmL7_Wri1_body" file="mesh/2h09080_arml_t78.stl"/>
+        <mesh class="Armar6" name="ArmL8_Wri2_body" file="mesh/2h09090_arml_t8.stl"/>
+        <mesh class="Armar6" name="ArmR1_Cla1_body" file="mesh/2h09020_arml_t12.stl"/>
+        <mesh class="Armar6" name="ArmR2_Sho1_body" file="mesh/2h09030_arml_t23.stl"/>
+        <mesh class="Armar6" name="ArmR3_Sho2_body" file="mesh/2h09040_arml_t34.stl"/>
+        <mesh class="Armar6" name="ArmR4_Sho3_body" file="mesh/2h09050_arml_t45.stl"/>
+        <mesh class="Armar6" name="ArmR5_Elb1_body" file="mesh/2h09060_arml_t56.stl"/>
+        <mesh class="Armar6" name="ArmR6_Elb2_body" file="mesh/2h09070_arml_t67.stl"/>
+        <mesh class="Armar6" name="ArmR7_Wri1_body" file="mesh/2h09080_arml_t78.stl"/>
+        <mesh class="Armar6" name="ArmR8_Wri2_body" file="mesh/2h09090_arml_t8.stl"/>
+        <mesh class="Armar6" name="Hand L Palm" file="mesh/palm_l.stl"/>
+        <mesh class="Armar6" name="Hand R Palm" file="mesh/palm_r.stl"/>
+        <mesh class="Armar6" name="Head Base" file="mesh/6a11000_halsbasis_t1.stl"/>
+        <mesh class="Armar6" name="Index L 1 Body" file="mesh/index_prox.stl"/>
+        <mesh class="Armar6" name="Index L 2 Body" file="mesh/index_inter.stl"/>
+        <mesh class="Armar6" name="Index L 3 Body" file="mesh/index_dist.stl"/>
+        <mesh class="Armar6" name="Index R 1 Body" file="mesh/index_prox.stl"/>
+        <mesh class="Armar6" name="Index R 2 Body" file="mesh/index_inter.stl"/>
+        <mesh class="Armar6" name="Index R 3 Body" file="mesh/index_dist.stl"/>
+        <mesh class="Armar6" name="Middle L 1 Body" file="mesh/middle_prox.stl"/>
+        <mesh class="Armar6" name="Middle L 2 Body" file="mesh/middle_inter.stl"/>
+        <mesh class="Armar6" name="Middle L 3 Body" file="mesh/middle_dist.stl"/>
+        <mesh class="Armar6" name="Middle R 1 Body" file="mesh/middle_prox.stl"/>
+        <mesh class="Armar6" name="Middle R 2 Body" file="mesh/middle_inter.stl"/>
+        <mesh class="Armar6" name="Middle R 3 Body" file="mesh/middle_dist.stl"/>
+        <mesh class="Armar6" name="Neck_1_Yaw_body" file="mesh/6a12000_halsmitte_t12.stl"/>
+        <mesh class="Armar6" name="Neck_2_Pitch_body" file="mesh/6a13000_halsoben_v13.stl"/>
+        <mesh class="Armar6" name="Node_ArmL_Cla" file="mesh/2h09010_arml_cla.stl"/>
+        <mesh class="Armar6" name="Node_ArmR_Cla" file="mesh/2h09010_arml_cla.stl"/>
+        <mesh class="Armar6" name="Pinky L 1 Body" file="mesh/pinky_prox.stl"/>
+        <mesh class="Armar6" name="Pinky L 2 Body" file="mesh/pinky_inter.stl"/>
+        <mesh class="Armar6" name="Pinky L 3 Body" file="mesh/pinky_dist.stl"/>
+        <mesh class="Armar6" name="Pinky R 1 Body" file="mesh/pinky_prox.stl"/>
+        <mesh class="Armar6" name="Pinky R 2 Body" file="mesh/pinky_inter.stl"/>
+        <mesh class="Armar6" name="Pinky R 3 Body" file="mesh/pinky_dist.stl"/>
+        <mesh class="Armar6" name="Platform" file="mesh/6a30000_plattform_und_torso.stl"/>
+        <mesh class="Armar6" name="Ring L 1 Body" file="mesh/ring_prox.stl"/>
+        <mesh class="Armar6" name="Ring L 2 Body" file="mesh/ring_inter.stl"/>
+        <mesh class="Armar6" name="Ring L 3 Body" file="mesh/ring_dist.stl"/>
+        <mesh class="Armar6" name="Ring R 1 Body" file="mesh/ring_prox.stl"/>
+        <mesh class="Armar6" name="Ring R 2 Body" file="mesh/ring_inter.stl"/>
+        <mesh class="Armar6" name="Ring R 3 Body" file="mesh/ring_dist.stl"/>
+        <mesh class="Armar6" name="Thumb L 1 Body" file="mesh/thumb_prox.stl"/>
+        <mesh class="Armar6" name="Thumb L 2 Body" file="mesh/thumb_dist.stl"/>
+        <mesh class="Armar6" name="Thumb R 1 Body" file="mesh/thumb_prox.stl"/>
+        <mesh class="Armar6" name="Thumb R 2 Body" file="mesh/thumb_dist.stl"/>
+        <mesh class="Armar6" name="TorsoJoint_body" file="mesh/torso_armar_6.stl"/>
+    </asset>
+    <worldbody>
+        <body name="Armar6" childclass="Armar6">
+            <body name="root~Dummy_Platform~X_Platform~Y_Platform~Yaw_Platform~Platform-colmodel">
+                <joint name="X_Platform" type="slide" axis="1 0 0" limited="true" range="-10 10" pos="0 0 0"/>
+                <joint name="Y_Platform" type="slide" axis="0 1 0" limited="true" range="-10 10" pos="0 0 0"/>
+                <joint name="Yaw_Platform" type="hinge" axis="0 0 1" limited="true" range="-3.14159 3.14159" pos="0 0 0"/>
+                <inertial pos="0 3.88794e-05 3.38266" mass="1" diaginertia="0.129479 0.088002 0.118562" quat="1 0 0 0"/>
+                <body name="Platform" pos="0 0 2.997" quat="1 0 0 0">
+                    <inertial pos="0 0 0.01" mass="100" diaginertia="6.02417 2.08667 8.10417"/>
+                    <body name="TorsoJoint~TorsoJoint_body" pos="0 0 1.195" quat="1 0 0 0">
+                        <joint name="TorsoJoint" type="slide" axis="0 0 1" limited="true" range="-0.365 0"/>
+                        <inertial pos="0 0 0.0711" mass="9.70890045" fullinertia="0.064445 0.070569 0.182479 0 0.000181 -4.4e-05" quat="1 0 0 0"/>
+                        <body name="CenterArms" pos="0 0 0.1" quat="0.707107 0 0 0.707107">
+                            <body name="Node_ArmL_Cla" pos="0 0.09 0" quat="1 0 0 0">
+                                <inertial pos="2.27374e-16 -0.014 0.005" mass="1" diaginertia="0.00475308 0.00413708 0.00293667"/>
+                                <body name="ArmL1_Cla1~ArmL1_Cla1_body" pos="0 0 0" quat="1 0 0 0">
+                                    <joint name="ArmL1_Cla1" type="hinge" axis="0 0 1" limited="true" range="-1.39626 1.39626"/>
+                                    <inertial pos="0 0.038 0" mass="3.54879999" fullinertia="0.018383 0.014306 0.010714 2.1e-05 0.000211 -0.002042" quat="1 0 0 0"/>
+                                    <body name="Node_ArmL_Sho~ArmL2_Sho1~ArmL2_Sho1_body" pos="0 0.289778 0.0776458" quat="1 0 0 0">
+                                        <joint name="ArmL2_Sho1" type="hinge" axis="0 0.965926 0.258819" limited="false" pos="0 0 0"/>
+                                        <inertial pos="-0.0226736 0.0922353 0.0292221" mass="3.12701988" fullinertia="0.009401 0.012958 0.013138 -1.8e-05 -3e-06 -5.4e-05" quat="0.793353 -0.608762 0 0"/>
+                                        <body name="Node_ArmL_Sho_B~ArmL3_Sho2~ArmL3_Sho2_body" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+                                            <joint name="ArmL3_Sho2" type="hinge" axis="1 0 0" limited="true" range="-0.24 3.1" pos="0 0 0"/>
+                                            <inertial pos="0.0275135 0.0715656 0.00430086" mass="2.9166801" fullinertia="0.015225 0.011775 0.009438 0.000148 0.000739 0.000467" quat="0.707107 0 0.707107 0"/>
+                                            <body name="ArmL4_Sho3~ArmL4_Sho3_body" pos="0 0 0" quat="-0.500001 0.5 -0.500001 -0.500001">
+                                                <joint name="ArmL4_Sho3" type="hinge" axis="0 0 1" limited="false"/>
+                                                <inertial pos="0.0108927 -0.0324588 0.322241" mass="3.19494009" fullinertia="0.018629 0.011775 0.017761 0.000853 -0.00045 0.004029" quat="1 0 0 0"/>
+                                                <body name="Node_ArmL_Elb~ArmL5_Elb1~ArmL5_Elb1_body" pos="0 -0.055 0.409" quat="1 0 0 0">
+                                                    <joint name="ArmL5_Elb1" type="hinge" axis="1 0 0" limited="true" range="0 2.51" pos="0 0 0"/>
+                                                    <inertial pos="-0.00124491 0.00321118 0.0653141" mass="2.59851003" fullinertia="0.007551 0.009482 0.011298 0.000371 0.000125 3e-06" quat="0.707107 0 0.707108 0"/>
+                                                    <body name="ArmL6_Elb2~ArmL6_Elb2_body" pos="0 0 0" quat="1 0 -2.98024e-07 0">
+                                                        <joint name="ArmL6_Elb2" type="hinge" axis="0 0 1" limited="false"/>
+                                                        <inertial pos="-0.00074385 0.0546722 0.251106" mass="2.46904993" fullinertia="0.011854 0.007149 0.0095 6.8e-05 8.3e-05 -0.00184" quat="1 0 0 0"/>
+                                                        <body name="Node_ArmL_Wri~ArmL7_Wri1~ArmL7_Wri1_body" pos="0 0 0.364" quat="1 0 0 0">
+                                                            <joint name="ArmL7_Wri1" type="hinge" axis="0 -1 0" limited="true" range="-0.64 0.64" pos="0 0 0"/>
+                                                            <inertial pos="0.0573546 -0.0559653 -0.00392756" mass="1.62579" fullinertia="0.001552 0.001959 0.002392 1.4e-05 -1.8e-05 2e-06" quat="0.707107 0.707107 0 0"/>
+                                                            <body name="ArmL8_Wri2~ArmL8_Wri2_body" pos="0 0 0" quat="0.707107 0 0 0.707107">
+                                                                <joint name="ArmL8_Wri2" type="hinge" axis="0 -1 0" limited="true" range="-1.52 1.52"/>
+                                                                <inertial pos="-0.0119674 0.0267226 0.0942127" mass="0.528074026" fullinertia="0.002188 0.001519 0.001176 7e-06 -4e-06 0.000256" quat="1 0 0 0"/>
+                                                                <site name="DHParameterOptimization_HandLeft" pos="0 0 0.1736" quat="0.707107 7.48679e-23 2.45436e-29 -0.707107"/>
+                                                                <body name="HandL_Base~Hand L Root" pos="0 0 0.14" quat="-0.5 0.5 0.5 0.5">
+                                                                    <body name="Hand L Col" pos="0 0 0" quat="1 0 0 0">
+                                                                        <inertial pos="-0.0429127 0.0067246 0.0886118" mass="0.98576498" diaginertia="0.00416706 0.00842995 0.00866558"/>
+                                                                    </body>
+                                                                    <site name="Hand L GCP" pos="0.135 -0.055 0.025" quat="0.270598 -0.270598 0.653282 -0.653282"/>
+                                                                    <body name="Hand L Palm" pos="0 0 0" quat="1 0 0 0">
+                                                                        <body name="Index L 1 Joint~Index L 1 Body" pos="0.145309 -3.8147e-09 0.039221" quat="0.521296 -0.521297 0.477656 0.477656">
+                                                                            <joint name="Index L 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Index L 2 Joint~Index L 2 Body" pos="0 -0.0559536 -2.48587e-17" quat="0.999896 0 0 0">
+                                                                                <joint name="Index L 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <body name="Index L 3 Joint~Index L 3 Body" pos="3.0505e-08 -0.0319734 -1.42048e-17" quat="0.999896 0 0 0">
+                                                                                    <joint name="Index L 3 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                    <geom type="mesh" mesh="Index L 3 Body" name="Index L 3 Body" pos="0 0 0" quat="-4.37069e-08 0 0.999896 1.11034e-16"/>
+                                                                                </body>
+                                                                                <geom type="mesh" mesh="Index L 2 Body" name="Index L 2 Body" pos="0 0 0" quat="0.999896 0 0 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Index L 1 Body" name="Index L 1 Body" pos="0 0 0" quat="0.999896 0 0 0"/>
+                                                                        </body>
+                                                                        <body name="LeftHandFingers" pos="0.130318 0 0.0553" quat="0.589703 -0.589703 0.390451 0.390451">
+                                                                            <joint name="LeftHandFingers" type="hinge" axis="1 0 0" limited="true" range="0 1"/>
+                                                                            <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                                                        </body>
+                                                                        <body name="LeftHandThumb" pos="0.081114 -0.046914 -0.0395" quat="0.562361 0.0231168 -0.825538 -0.0342307">
+                                                                            <joint name="LeftHandThumb" type="hinge" axis="1 0 0" limited="true" range="0 1"/>
+                                                                            <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                                                        </body>
+                                                                        <body name="Middle L 1 Joint~Middle L 1 Body" pos="0.15172 0 0.0075" quat="-0.5 0.5 -0.5 -0.5">
+                                                                            <joint name="Middle L 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Middle L 2 Joint~Middle L 2 Body" pos="0 -0.06 0" quat="1 0 0 0">
+                                                                                <joint name="Middle L 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <body name="Middle L 3 Joint~Middle L 3 Body" pos="0 -0.039 0" quat="1 0 0 0">
+                                                                                    <joint name="Middle L 3 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                    <geom type="mesh" mesh="Middle L 3 Body" name="Middle L 3 Body" pos="0 0 0" quat="-4.37114e-08 0 1 1.05879e-22"/>
+                                                                                </body>
+                                                                                <geom type="mesh" mesh="Middle L 2 Body" name="Middle L 2 Body" pos="0 0 0" quat="1 0 0 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Middle L 1 Body" name="Middle L 1 Body" pos="0 0 0" quat="1 0 0 0"/>
+                                                                        </body>
+                                                                        <body name="Pinky L 1 Joint~Pinky L 1 Body" pos="0.130318 -3.8147e-09 -0.0553001" quat="0.390451 -0.390451 0.589703 0.589703">
+                                                                            <joint name="Pinky L 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Pinky L 2 Joint~Pinky L 2 Body" pos="-1.52759e-08 -0.0461033 8.1804e-17" quat="1.00028 0 0 0">
+                                                                                <joint name="Pinky L 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <body name="Pinky L 3 Joint~Pinky L 3 Body" pos="-1.52759e-08 -0.0270607 3.8147e-09" quat="1.00028 0 0 0">
+                                                                                    <joint name="Pinky L 3 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                    <geom type="mesh" mesh="Pinky L 3 Body" name="Pinky L 3 Body" pos="0 0 0" quat="-4.37237e-08 0 1.00028 -4.43965e-16"/>
+                                                                                </body>
+                                                                                <geom type="mesh" mesh="Pinky L 2 Body" name="Pinky L 2 Body" pos="0 0 0" quat="1.00028 0 0 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Pinky L 1 Body" name="Pinky L 1 Body" pos="0 0 0" quat="1.00028 0 0 0"/>
+                                                                        </body>
+                                                                        <body name="Ring L 1 Joint~Ring L 1 Body" pos="0.146516 0 -0.026304" quat="0.45454 -0.45454 0.541756 0.541756">
+                                                                            <joint name="Ring L 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Ring L 2 Joint~Ring L 2 Body" pos="0 -0.0550552 0" quat="1.00013 0 0 0">
+                                                                                <joint name="Ring L 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <body name="Ring L 3 Joint~Ring L 3 Body" pos="0 -0.0370372 0" quat="1.00013 0 0 0">
+                                                                                    <joint name="Ring L 3 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                    <geom type="mesh" mesh="Ring L 3 Body" name="Ring L 3 Body" pos="0 0 0" quat="-3.09203e-08 3.09047e-08 0.707195 0.707195"/>
+                                                                                </body>
+                                                                                <geom type="mesh" mesh="Ring L 2 Body" name="Ring L 2 Body" pos="0 0 0" quat="1.00013 0 0 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Ring L 1 Body" name="Ring L 1 Body" pos="0 0 0" quat="1.00013 0 0 0"/>
+                                                                        </body>
+                                                                        <body name="Thumb L 1 Joint~Thumb L 1 Body" pos="0.081114 -0.046914 0.0395001" quat="0.825984 -0.0345043 -0.562057 0.0233055">
+                                                                            <joint name="Thumb L 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Thumb L 2 Joint~Thumb L 2 Body" pos="1.51913e-05 -0.0440791 -5.38474e-05" quat="0.999992 0 0 0">
+                                                                                <joint name="Thumb L 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <geom type="mesh" mesh="Thumb L 2 Body" name="Thumb L 2 Body" pos="0 0 0" quat="-5.96051e-08 -1.86266e-09 0.999992 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Thumb L 1 Body" name="Thumb L 1 Body" pos="0 0 0" quat="0.999992 0 0 0"/>
+                                                                        </body>
+                                                                        <geom type="mesh" mesh="Hand L Palm" name="Hand L Palm"/>
+                                                                    </body>
+                                                                    <site name="Hand L Power TCP" pos="0.135 -0.055 0.025" quat="0.270598 -0.270598 0.653282 -0.653282"/>
+                                                                    <site name="Hand L Precision TCP" pos="0.14 -0.1 0.035" quat="0.270598 -0.270598 0.653282 -0.653282"/>
+                                                                    <site name="Hand L TCP" pos="0.12 -0.03 -3.05176e-08" quat="-0.5 0.5 -0.5 0.5"/>
+                                                                    <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                                                </body>
+                                                                <geom type="mesh" mesh="ArmL8_Wri2_body" name="ArmL8_Wri2_body" pos="0 0 0" quat="1 0 0 0"/>
+                                                            </body>
+                                                            <geom type="mesh" mesh="ArmL7_Wri1_body" name="ArmL7_Wri1_body" pos="0 0 0" quat="0.707107 0.707107 0 0"/>
+                                                        </body>
+                                                        <geom type="mesh" mesh="ArmL6_Elb2_body" name="ArmL6_Elb2_body" pos="0 0 0" quat="1 0 0 0"/>
+                                                    </body>
+                                                    <geom type="mesh" mesh="ArmL5_Elb1_body" name="ArmL5_Elb1_body" pos="0 0 0" quat="0.707107 0 0.707108 0"/>
+                                                </body>
+                                                <geom type="mesh" mesh="ArmL4_Sho3_body" name="ArmL4_Sho3_body" pos="0 0 0" quat="1 0 0 0"/>
+                                            </body>
+                                            <geom type="mesh" mesh="ArmL3_Sho2_body" name="ArmL3_Sho2_body" pos="0 0 0" quat="0.707107 0 0.707107 0"/>
+                                        </body>
+                                        <geom type="mesh" mesh="ArmL2_Sho1_body" name="ArmL2_Sho1_body" pos="0 0 0" quat="0.793353 -0.608762 0 0"/>
+                                    </body>
+                                    <geom type="mesh" mesh="ArmL1_Cla1_body" name="ArmL1_Cla1_body" pos="0 0 0" quat="1 0 0 0"/>
+                                </body>
+                                <geom type="mesh" mesh="Node_ArmL_Cla" name="Node_ArmL_Cla"/>
+                            </body>
+                            <body name="Node_ArmR_Cla" pos="0 -0.09 0" quat="-4.37114e-08 0 0 1">
+                                <inertial pos="0 -0.014 0.005" mass="1" diaginertia="0.00475308 0.00413708 0.00293667"/>
+                                <body name="ArmR1_Cla1~ArmR1_Cla1_body" pos="0 0 0" quat="1 0 0 0">
+                                    <joint name="ArmR1_Cla1" type="hinge" axis="0 0 1" limited="true" range="-1.39626 1.39626"/>
+                                    <inertial pos="0 0.1419 0.0283" mass="3.54879999" fullinertia="0.018383 0.014306 0.010714 2.1e-05 0.000211 -0.002042" quat="1 0 0 0"/>
+                                    <body name="Node_ArmR_Sho~ArmR2_Sho1~ArmR2_Sho1_body" pos="3.63798e-15 0.289778 0.0776458" quat="1 0 0 0">
+                                        <joint name="ArmR2_Sho1" type="hinge" axis="0 0.965926 0.258819" limited="false" pos="0 0 0"/>
+                                        <inertial pos="0.000155871 0.0194509 0.0089816" mass="3.03803992" fullinertia="0.009401 0.012958 0.013138 -1.8e-05 -3e-06 -5.4e-05" quat="0.793353 -0.608762 0 0"/>
+                                        <body name="Node_ArmR_Sho_B~ArmR3_Sho2~ArmR3_Sho2_body" pos="0 0 0" quat="0.707107 -0.707107 -5.45354e-16 -7.10719e-16">
+                                            <joint name="ArmR3_Sho2" type="hinge" axis="1 3.55271e-15 0" limited="true" range="-0.26 3.1" pos="0 0 0"/>
+                                            <inertial pos="0.00467261 0.11 0.012851" mass="3.46205997" fullinertia="0.015225 0.011775 0.009438 0.000148 0.000739 0.000467" quat="0.707107 -2.99471e-22 0.707107 -2.51215e-15"/>
+                                            <body name="ArmR4_Sho3~ArmR4_Sho3_body" pos="0 0 0" quat="-0.500001 0.5 0.5 0.5">
+                                                <joint name="ArmR4_Sho3" type="hinge" axis="0 0 1" limited="false"/>
+                                                <inertial pos="0.0162832 -0.0332289 0.315" mass="3.31476998" fullinertia="0.018629 0.011775 0.017761 0.000853 -0.00045 0.004029" quat="1 0 0 0"/>
+                                                <body name="Node_ArmR_Elb~ArmR5_Elb1~ArmR5_Elb1_body" pos="3.12639e-15 -0.055 0.409" quat="1 0 0 0">
+                                                    <joint name="ArmR5_Elb1" type="hinge" axis="1 -5.68434e-14 -1.55294e-22" limited="true" range="0 2.5" pos="0 0 0"/>
+                                                    <inertial pos="-0.00899375 0.00475698 0.0910714" mass="2.63888001" fullinertia="0.007551 0.009482 0.011298 0.000371 0.000125 3e-06" quat="0.707107 2.51215e-15 0.707108 4.01944e-14"/>
+                                                    <body name="ArmR6_Elb2~ArmR6_Elb2_body" pos="0 0 0" quat="1 -2.84217e-14 -2.98024e-07 1.77639e-15">
+                                                        <joint name="ArmR6_Elb2" type="hinge" axis="0 0 1" limited="false"/>
+                                                        <inertial pos="0.00107382 0.0193892 0.253032" mass="2.71787" fullinertia="0.011854 0.007149 0.0095 6.8e-05 8.3e-05 -0.00184" quat="1 0 0 0"/>
+                                                        <body name="Node_ArmR_Wri~ArmR7_Wri1~ArmR7_Wri1_body" pos="-5.65271e-23 1.29319e-15 0.364" quat="1 0 0 0">
+                                                            <joint name="ArmR7_Wri1" type="hinge" axis="5.68434e-14 -1 -3.55271e-15" limited="true" range="-0.64 0.64" pos="0 0 0"/>
+                                                            <inertial pos="-0.00656715 0.0118144 -0.00467334" mass="1.62346005" fullinertia="0.001552 0.001959 0.002392 1.4e-05 -1.8e-05 2e-06" quat="0.707107 0.707107 0 -4.01944e-14"/>
+                                                            <body name="ArmR8_Wri2~ArmR8_Wri2_body" pos="0 0 0" quat="0.707107 -2.00972e-14 2.00972e-14 0.707107">
+                                                                <joint name="ArmR8_Wri2" type="hinge" axis="0 -1 0" limited="true" range="-1.52 1.52"/>
+                                                                <inertial pos="-0.039364 0.0192072 0.0813929" mass="0.5" fullinertia="0.002188 0.001519 0.001176 7e-06 -4e-06 0.000256" quat="1 0 0 0"/>
+                                                                <site name="DHParameterOptimization_HandRight" pos="6.16752e-16 0 0.1736" quat="0.707107 2.51215e-15 2.51215e-15 -0.707107"/>
+                                                                <body name="HandR_Base~Hand R Root" pos="4.9738e-16 0 0.14" quat="0.5 -0.5 -0.5 -0.5">
+                                                                    <body name="Hand R Col" pos="0 0 0" quat="1 0 0 0">
+                                                                        <inertial pos="0.1 0.01 -0.002" mass="0.927100003" diaginertia="0.00391301 0.00793111 0.00814815"/>
+                                                                    </body>
+                                                                    <site name="Hand R GCP" pos="0.135 -0.055 -0.0250001" quat="0.653281 0.653283 0.270599 0.270598"/>
+                                                                    <body name="Hand R Palm" pos="0 0 0" quat="1 0 0 0">
+                                                                        <body name="Index R 1 Joint~Index R 1 Body" pos="0.145309 3.8147e-09 -0.0392211" quat="0.477656 -0.477656 0.521297 0.521296">
+                                                                            <joint name="Index R 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Index R 2 Joint~Index R 2 Body" pos="0 -0.0559536 -7.45761e-17" quat="0.999896 0 0 0">
+                                                                                <joint name="Index R 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <body name="Index R 3 Joint~Index R 3 Body" pos="0 -0.0319735 -4.2615e-17" quat="0.999896 0 0 0">
+                                                                                    <joint name="Index R 3 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                    <geom type="mesh" mesh="Index R 3 Body" name="Index R 3 Body" pos="0 0 0" quat="-4.37069e-08 0 0.999896 1.11034e-16"/>
+                                                                                </body>
+                                                                                <geom type="mesh" mesh="Index R 2 Body" name="Index R 2 Body" pos="0 0 0" quat="0.999896 0 0 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Index R 1 Body" name="Index R 1 Body" pos="0 0 0" quat="0.999896 0 0 0"/>
+                                                                        </body>
+                                                                        <body name="Middle R 1 Joint~Middle R 1 Body" pos="0.15172 0 -0.00750006" quat="0.5 -0.5 0.5 0.5">
+                                                                            <joint name="Middle R 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Middle R 2 Joint~Middle R 2 Body" pos="0 -0.0600001 2.13163e-16" quat="1 0 0 0">
+                                                                                <joint name="Middle R 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <body name="Middle R 3 Joint~Middle R 3 Body" pos="0 -0.039 1.38556e-16" quat="1 0 0 0">
+                                                                                    <joint name="Middle R 3 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                    <geom type="mesh" mesh="Middle R 3 Body" name="Middle R 3 Body" pos="0 0 0" quat="-4.37114e-08 0 1 0"/>
+                                                                                </body>
+                                                                                <geom type="mesh" mesh="Middle R 2 Body" name="Middle R 2 Body" pos="0 0 0" quat="1 0 0 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Middle R 1 Body" name="Middle R 1 Body" pos="0 0 0" quat="1 0 0 0"/>
+                                                                        </body>
+                                                                        <body name="Pinky R 1 Joint~Pinky R 1 Body" pos="0.130318 3.8147e-09 0.0553" quat="0.589703 -0.589703 0.390451 0.390451">
+                                                                            <joint name="Pinky R 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Pinky R 2 Joint~Pinky R 2 Body" pos="1.52759e-08 -0.0461033 1.22706e-15" quat="1.00028 0 0 0">
+                                                                                <joint name="Pinky R 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <body name="Pinky R 3 Joint~Pinky R 3 Body" pos="1.76183e-22 -0.0270607 -3.8147e-09" quat="1.00028 0 0 0">
+                                                                                    <joint name="Pinky R 3 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                    <geom type="mesh" mesh="Pinky R 3 Body" name="Pinky R 3 Body" pos="0 0 0" quat="-4.37237e-08 0 1.00028 4.43965e-16"/>
+                                                                                </body>
+                                                                                <geom type="mesh" mesh="Pinky R 2 Body" name="Pinky R 2 Body" pos="0 0 0" quat="1.00028 0 0 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Pinky R 1 Body" name="Pinky R 1 Body" pos="0 0 0" quat="1.00028 0 0 0"/>
+                                                                        </body>
+                                                                        <body name="RightHandFingers" pos="0.130318 3.8147e-09 0.0553" quat="0.589703 -0.589703 0.390451 0.390451">
+                                                                            <joint name="RightHandFingers" type="hinge" axis="1 0 0" limited="true" range="0 1"/>
+                                                                            <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                                                        </body>
+                                                                        <body name="RightHandThumb" pos="0.081114 -0.046914 -0.0395" quat="0.562361 0.0231168 -0.825538 -0.0342307">
+                                                                            <joint name="RightHandThumb" type="hinge" axis="1 0 0" limited="true" range="0 1"/>
+                                                                            <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                                                        </body>
+                                                                        <body name="Ring R 1 Joint~Ring R 1 Body" pos="0.146516 0 0.026304" quat="0.541756 -0.541756 0.45454 0.45454">
+                                                                            <joint name="Ring R 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Ring R 2 Joint~Ring R 2 Body" pos="3.05329e-08 -0.0550552 6.84239e-16" quat="1.00013 0 0 0">
+                                                                                <joint name="Ring R 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <body name="Ring R 3 Joint~Ring R 3 Body" pos="-3.05329e-08 -0.0370372 4.60309e-16" quat="1.00013 0 0 0">
+                                                                                    <joint name="Ring R 3 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                    <geom type="mesh" mesh="Ring R 3 Body" name="Ring R 3 Body" pos="0 0 0" quat="-3.09202e-08 3.09048e-08 0.707195 0.707195"/>
+                                                                                </body>
+                                                                                <geom type="mesh" mesh="Ring R 2 Body" name="Ring R 2 Body" pos="0 0 0" quat="1.00013 0 0 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Ring R 1 Body" name="Ring R 1 Body" pos="0 0 0" quat="1.00013 0 0 0"/>
+                                                                        </body>
+                                                                        <body name="Thumb R 1 Joint~Thumb R 1 Body" pos="0.081114 -0.046914 -0.0395" quat="0.562361 0.0231168 -0.825538 -0.0342307">
+                                                                            <joint name="Thumb R 1 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                            <body name="Thumb R 2 Joint~Thumb R 2 Body" pos="-1.51603e-05 -0.0440791 -5.38475e-05" quat="0.999992 0 0 0">
+                                                                                <joint name="Thumb R 2 Joint" type="hinge" axis="1 0 0" limited="true" range="0 1.5708"/>
+                                                                                <geom type="mesh" mesh="Thumb R 2 Body" name="Thumb R 2 Body" pos="1.52588e-05 0 -3.05176e-05" quat="-5.21545e-08 0 0.999992 0"/>
+                                                                            </body>
+                                                                            <geom type="mesh" mesh="Thumb R 1 Body" name="Thumb R 1 Body" pos="0 0 0" quat="0.999992 0 0 0"/>
+                                                                        </body>
+                                                                        <geom type="mesh" mesh="Hand R Palm" name="Hand R Palm"/>
+                                                                    </body>
+                                                                    <site name="Hand R Power TCP" pos="0.135 -0.055 -0.0250001" quat="0.653281 0.653283 0.270599 0.270598"/>
+                                                                    <site name="Hand R Precision TCP" pos="0.14 -0.1 -0.0350001" quat="0.653281 0.653283 0.270599 0.270598"/>
+                                                                    <site name="Hand R TCP" pos="0.12 -0.03 -3.05176e-08" quat="0.5 0.5 0.5 0.5"/>
+                                                                    <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                                                </body>
+                                                                <geom type="mesh" mesh="ArmR8_Wri2_body" name="ArmR8_Wri2_body" pos="0 0 0" quat="1 0 0 0"/>
+                                                            </body>
+                                                            <geom type="mesh" mesh="ArmR7_Wri1_body" name="ArmR7_Wri1_body" pos="0 0 0" quat="0.707107 0.707107 0 -4.01944e-14"/>
+                                                        </body>
+                                                        <geom type="mesh" mesh="ArmR6_Elb2_body" name="ArmR6_Elb2_body" pos="0 0 0" quat="1 0 0 0"/>
+                                                    </body>
+                                                    <geom type="mesh" mesh="ArmR5_Elb1_body" name="ArmR5_Elb1_body" pos="0 0 0" quat="0.707107 2.51215e-15 0.707108 4.01944e-14"/>
+                                                </body>
+                                                <geom type="mesh" mesh="ArmR4_Sho3_body" name="ArmR4_Sho3_body" pos="0 0 0" quat="1 0 0 0"/>
+                                            </body>
+                                            <geom type="mesh" mesh="ArmR3_Sho2_body" name="ArmR3_Sho2_body" pos="0 0 0" quat="0.707107 -2.99471e-22 0.707107 -2.51215e-15"/>
+                                        </body>
+                                        <geom type="mesh" mesh="ArmR2_Sho1_body" name="ArmR2_Sho1_body" pos="0 0 0" quat="0.793353 -0.608762 0 0"/>
+                                    </body>
+                                    <geom type="mesh" mesh="ArmR1_Cla1_body" name="ArmR1_Cla1_body" pos="0 0 0" quat="1 0 0 0"/>
+                                </body>
+                                <geom type="mesh" mesh="Node_ArmR_Cla" name="Node_ArmR_Cla"/>
+                            </body>
+                            <site name="DHParameterOptimization_NeckLeft" pos="0 0.09 0.1665" quat="1 0 0 0"/>
+                            <site name="DHParameterOptimization_NeckRight" pos="0 -0.09 0.1665" quat="-4.37114e-08 0 0 1"/>
+                            <body name="Head Base" pos="0 0 0.2685" quat="1 0 0 0">
+                                <inertial pos="0.000194504 -0.0039675 -0.119014" mass="4" diaginertia="0.0371162 0.00922554 0.0420782"/>
+                                <body name="Neck_1_Yaw~Neck_1_Yaw_body" pos="0 0 0" quat="1 0 0 0">
+                                    <joint name="Neck_1_Yaw" type="hinge" axis="0 0 1" limited="true" range="-1.5708 1.5708"/>
+                                    <inertial pos="-0.0024495 -2.00653e-06 -0.0102535" mass="2" diaginertia="0.00628219 0.00629655 0.00656039" quat="1 0 0 0"/>
+                                    <body name="Neck_2_Pitch~Neck_2_Pitch_body" pos="0 0 0" quat="0.5 0.5 0.5 0.5">
+                                        <joint name="Neck_2_Pitch" type="hinge" axis="1 0 0" limited="true" range="-1.13446 0.872665"/>
+                                        <inertial pos="-6.15082e-05 0.140462 0.058087" mass="6.79876995" diaginertia="0.124374 0.107958 0.136991" quat="1 0 0 0"/>
+                                        <body name="DepthCamera" pos="0.033 0.2478 0.193" quat="-4.37114e-08 -8.21014e-16 0 1">
+                                            <site name="DepthCameraSim" pos="-3.8147e-09 0 0" quat="0.707107 4.8556e-16 -1.16109e-15 0.707107"/>
+                                            <body name="VirtualCentralGazeDepthCamera" pos="-3.8147e-09 0 0" quat="-3.09086e-08 0.707107 3.09086e-08 0.707107">
+                                                <joint name="VirtualCentralGazeDepthCamera" type="slide" axis="1 0 0" limited="true" range="0 10"/>
+                                                <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                            </body>
+                                            <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                        </body>
+                                        <body name="FleaCamerasCenter" pos="0 0.173 0.123" quat="-4.37114e-08 -8.21014e-16 0 1">
+                                            <site name="FleaCamerasLeft~FleaCamerasLeftSim" pos="-0.135 0 0" quat="1 0 0 0"/>
+                                            <site name="FleaCamerasRight~FleaCamerasRightSim" pos="0.135 0 0" quat="1 0 0 0"/>
+                                            <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                        </body>
+                                        <body name="Roboception" pos="9.09495e-16 0.173 0.1605" quat="1 0 0 0">
+                                            <site name="Roboception_LeftCamera~Roboception_LeftCameraSim" pos="0.08 0 0" quat="-4.37114e-08 -8.21014e-16 0 1"/>
+                                            <site name="Roboception_RightCamera~Roboception_RightCameraSim" pos="-0.08 0 0" quat="-4.37114e-08 -8.21014e-16 0 1"/>
+                                            <body name="VirtualCentralGaze" pos="0 0 0" quat="-3.09086e-08 0.707107 3.09086e-08 0.707107">
+                                                <joint name="VirtualCentralGaze" type="slide" axis="1 0 0" limited="true" range="0 10"/>
+                                                <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                            </body>
+                                            <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                                        </body>
+                                        <geom type="mesh" mesh="Neck_2_Pitch_body" name="Neck_2_Pitch_body" pos="0 0 0" quat="1 0 0 0"/>
+                                    </body>
+                                    <geom type="mesh" mesh="Neck_1_Yaw_body" name="Neck_1_Yaw_body" pos="0 0 0" quat="1 0 0 0"/>
+                                </body>
+                                <geom type="mesh" mesh="Head Base" name="Head Base"/>
+                            </body>
+                            <inertial pos="0 0 0" mass="9.99999975e-05" diaginertia="1 1 1"/>
+                        </body>
+                        <geom type="mesh" mesh="TorsoJoint_body" name="TorsoJoint_body" pos="0 0 0" quat="1 0 0 0"/>
+                    </body>
+                    <site name="LaserScannerBack" pos="-0.3 -0.45 0.08" quat="0.707107 0 0 -0.707107"/>
+                    <site name="LaserScannerFront" pos="0.3 0.45 0.08" quat="0.707107 0 0 0.707107"/>
+                    <geom type="mesh" mesh="Platform" name="Platform"/>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <contact>
+        <exclude body1="ArmL1_Cla1~ArmL1_Cla1_body" body2="TorsoJoint~TorsoJoint_body"/>
+        <exclude body1="ArmL1_Cla1~ArmL1_Cla1_body" body2="Head Base"/>
+        <exclude body1="ArmL6_Elb2~ArmL6_Elb2_body" body2="ArmL8_Wri2~ArmL8_Wri2_body"/>
+        <exclude body1="ArmL8_Wri2~ArmL8_Wri2_body" body2="ArmL6_Elb2~ArmL6_Elb2_body"/>
+        <exclude body1="ArmR1_Cla1~ArmR1_Cla1_body" body2="TorsoJoint~TorsoJoint_body"/>
+        <exclude body1="ArmR1_Cla1~ArmR1_Cla1_body" body2="Head Base"/>
+        <exclude body1="ArmR6_Elb2~ArmR6_Elb2_body" body2="ArmR8_Wri2~ArmR8_Wri2_body"/>
+        <exclude body1="ArmR8_Wri2~ArmR8_Wri2_body" body2="ArmR6_Elb2~ArmR6_Elb2_body"/>
+        <exclude body1="Hand L Col" body2="Thumb L 2 Joint~Thumb L 2 Body"/>
+        <exclude body1="Hand R Col" body2="Thumb R 2 Joint~Thumb R 2 Body"/>
+        <exclude body1="Head Base" body2="ArmR1_Cla1~ArmR1_Cla1_body"/>
+        <exclude body1="Head Base" body2="ArmL1_Cla1~ArmL1_Cla1_body"/>
+        <exclude body1="Neck_1_Yaw~Neck_1_Yaw_body" body2="Neck_2_Pitch~Neck_2_Pitch_body"/>
+        <exclude body1="Neck_1_Yaw~Neck_1_Yaw_body" body2="Neck_1_Yaw~Neck_1_Yaw_body"/>
+        <exclude body1="Neck_1_Yaw~Neck_1_Yaw_body" body2="Head Base"/>
+        <exclude body1="Neck_2_Pitch~Neck_2_Pitch_body" body2="Neck_1_Yaw~Neck_1_Yaw_body"/>
+        <exclude body1="root~Dummy_Platform~X_Platform~Y_Platform~Yaw_Platform~Platform-colmodel" body2="Platform"/>
+        <exclude body1="root~Dummy_Platform~X_Platform~Y_Platform~Yaw_Platform~Platform-colmodel" body2="TorsoJoint~TorsoJoint_body"/>
+        <exclude body1="TorsoJoint~TorsoJoint_body" body2="ArmL1_Cla1~ArmL1_Cla1_body"/>
+        <exclude body1="TorsoJoint~TorsoJoint_body" body2="ArmR1_Cla1~ArmR1_Cla1_body"/>
+        <exclude body1="TorsoJoint~TorsoJoint_body" body2="root~Dummy_Platform~X_Platform~Y_Platform~Yaw_Platform~Platform-colmodel"/>
+        <exclude body1="Armar6" body2="root~Dummy_Platform~X_Platform~Y_Platform~Yaw_Platform~Platform-colmodel"/>
+        <exclude body1="root~Dummy_Platform~X_Platform~Y_Platform~Yaw_Platform~Platform-colmodel" body2="Platform"/>
+        <exclude body1="Platform" body2="TorsoJoint~TorsoJoint_body"/>
+        <exclude body1="TorsoJoint~TorsoJoint_body" body2="CenterArms"/>
+        <exclude body1="CenterArms" body2="Node_ArmL_Cla"/>
+        <exclude body1="Node_ArmL_Cla" body2="ArmL1_Cla1~ArmL1_Cla1_body"/>
+        <exclude body1="ArmL1_Cla1~ArmL1_Cla1_body" body2="Node_ArmL_Sho~ArmL2_Sho1~ArmL2_Sho1_body"/>
+        <exclude body1="Node_ArmL_Sho~ArmL2_Sho1~ArmL2_Sho1_body" body2="Node_ArmL_Sho_B~ArmL3_Sho2~ArmL3_Sho2_body"/>
+        <exclude body1="Node_ArmL_Sho_B~ArmL3_Sho2~ArmL3_Sho2_body" body2="ArmL4_Sho3~ArmL4_Sho3_body"/>
+        <exclude body1="ArmL4_Sho3~ArmL4_Sho3_body" body2="Node_ArmL_Elb~ArmL5_Elb1~ArmL5_Elb1_body"/>
+        <exclude body1="Node_ArmL_Elb~ArmL5_Elb1~ArmL5_Elb1_body" body2="ArmL6_Elb2~ArmL6_Elb2_body"/>
+        <exclude body1="ArmL6_Elb2~ArmL6_Elb2_body" body2="Node_ArmL_Wri~ArmL7_Wri1~ArmL7_Wri1_body"/>
+        <exclude body1="Node_ArmL_Wri~ArmL7_Wri1~ArmL7_Wri1_body" body2="ArmL8_Wri2~ArmL8_Wri2_body"/>
+        <exclude body1="ArmL8_Wri2~ArmL8_Wri2_body" body2="HandL_Base~Hand L Root"/>
+        <exclude body1="HandL_Base~Hand L Root" body2="Hand L Col"/>
+        <exclude body1="HandL_Base~Hand L Root" body2="Hand L Palm"/>
+        <exclude body1="Hand L Palm" body2="Index L 1 Joint~Index L 1 Body"/>
+        <exclude body1="Index L 1 Joint~Index L 1 Body" body2="Index L 2 Joint~Index L 2 Body"/>
+        <exclude body1="Index L 2 Joint~Index L 2 Body" body2="Index L 3 Joint~Index L 3 Body"/>
+        <exclude body1="Hand L Palm" body2="LeftHandFingers"/>
+        <exclude body1="Hand L Palm" body2="LeftHandThumb"/>
+        <exclude body1="Hand L Palm" body2="Middle L 1 Joint~Middle L 1 Body"/>
+        <exclude body1="Middle L 1 Joint~Middle L 1 Body" body2="Middle L 2 Joint~Middle L 2 Body"/>
+        <exclude body1="Middle L 2 Joint~Middle L 2 Body" body2="Middle L 3 Joint~Middle L 3 Body"/>
+        <exclude body1="Hand L Palm" body2="Pinky L 1 Joint~Pinky L 1 Body"/>
+        <exclude body1="Pinky L 1 Joint~Pinky L 1 Body" body2="Pinky L 2 Joint~Pinky L 2 Body"/>
+        <exclude body1="Pinky L 2 Joint~Pinky L 2 Body" body2="Pinky L 3 Joint~Pinky L 3 Body"/>
+        <exclude body1="Hand L Palm" body2="Ring L 1 Joint~Ring L 1 Body"/>
+        <exclude body1="Ring L 1 Joint~Ring L 1 Body" body2="Ring L 2 Joint~Ring L 2 Body"/>
+        <exclude body1="Ring L 2 Joint~Ring L 2 Body" body2="Ring L 3 Joint~Ring L 3 Body"/>
+        <exclude body1="Hand L Palm" body2="Thumb L 1 Joint~Thumb L 1 Body"/>
+        <exclude body1="Thumb L 1 Joint~Thumb L 1 Body" body2="Thumb L 2 Joint~Thumb L 2 Body"/>
+        <exclude body1="CenterArms" body2="Node_ArmR_Cla"/>
+        <exclude body1="Node_ArmR_Cla" body2="ArmR1_Cla1~ArmR1_Cla1_body"/>
+        <exclude body1="ArmR1_Cla1~ArmR1_Cla1_body" body2="Node_ArmR_Sho~ArmR2_Sho1~ArmR2_Sho1_body"/>
+        <exclude body1="Node_ArmR_Sho~ArmR2_Sho1~ArmR2_Sho1_body" body2="Node_ArmR_Sho_B~ArmR3_Sho2~ArmR3_Sho2_body"/>
+        <exclude body1="Node_ArmR_Sho_B~ArmR3_Sho2~ArmR3_Sho2_body" body2="ArmR4_Sho3~ArmR4_Sho3_body"/>
+        <exclude body1="ArmR4_Sho3~ArmR4_Sho3_body" body2="Node_ArmR_Elb~ArmR5_Elb1~ArmR5_Elb1_body"/>
+        <exclude body1="Node_ArmR_Elb~ArmR5_Elb1~ArmR5_Elb1_body" body2="ArmR6_Elb2~ArmR6_Elb2_body"/>
+        <exclude body1="ArmR6_Elb2~ArmR6_Elb2_body" body2="Node_ArmR_Wri~ArmR7_Wri1~ArmR7_Wri1_body"/>
+        <exclude body1="Node_ArmR_Wri~ArmR7_Wri1~ArmR7_Wri1_body" body2="ArmR8_Wri2~ArmR8_Wri2_body"/>
+        <exclude body1="ArmR8_Wri2~ArmR8_Wri2_body" body2="HandR_Base~Hand R Root"/>
+        <exclude body1="HandR_Base~Hand R Root" body2="Hand R Col"/>
+        <exclude body1="HandR_Base~Hand R Root" body2="Hand R Palm"/>
+        <exclude body1="Hand R Palm" body2="Index R 1 Joint~Index R 1 Body"/>
+        <exclude body1="Index R 1 Joint~Index R 1 Body" body2="Index R 2 Joint~Index R 2 Body"/>
+        <exclude body1="Index R 2 Joint~Index R 2 Body" body2="Index R 3 Joint~Index R 3 Body"/>
+        <exclude body1="Hand R Palm" body2="Middle R 1 Joint~Middle R 1 Body"/>
+        <exclude body1="Middle R 1 Joint~Middle R 1 Body" body2="Middle R 2 Joint~Middle R 2 Body"/>
+        <exclude body1="Middle R 2 Joint~Middle R 2 Body" body2="Middle R 3 Joint~Middle R 3 Body"/>
+        <exclude body1="Hand R Palm" body2="Pinky R 1 Joint~Pinky R 1 Body"/>
+        <exclude body1="Pinky R 1 Joint~Pinky R 1 Body" body2="Pinky R 2 Joint~Pinky R 2 Body"/>
+        <exclude body1="Pinky R 2 Joint~Pinky R 2 Body" body2="Pinky R 3 Joint~Pinky R 3 Body"/>
+        <exclude body1="Hand R Palm" body2="RightHandFingers"/>
+        <exclude body1="Hand R Palm" body2="RightHandThumb"/>
+        <exclude body1="Hand R Palm" body2="Ring R 1 Joint~Ring R 1 Body"/>
+        <exclude body1="Ring R 1 Joint~Ring R 1 Body" body2="Ring R 2 Joint~Ring R 2 Body"/>
+        <exclude body1="Ring R 2 Joint~Ring R 2 Body" body2="Ring R 3 Joint~Ring R 3 Body"/>
+        <exclude body1="Hand R Palm" body2="Thumb R 1 Joint~Thumb R 1 Body"/>
+        <exclude body1="Thumb R 1 Joint~Thumb R 1 Body" body2="Thumb R 2 Joint~Thumb R 2 Body"/>
+        <exclude body1="CenterArms" body2="Head Base"/>
+        <exclude body1="Head Base" body2="Neck_1_Yaw~Neck_1_Yaw_body"/>
+        <exclude body1="Neck_1_Yaw~Neck_1_Yaw_body" body2="Neck_2_Pitch~Neck_2_Pitch_body"/>
+        <exclude body1="Neck_2_Pitch~Neck_2_Pitch_body" body2="DepthCamera"/>
+        <exclude body1="DepthCamera" body2="VirtualCentralGazeDepthCamera"/>
+        <exclude body1="Neck_2_Pitch~Neck_2_Pitch_body" body2="FleaCamerasCenter"/>
+        <exclude body1="Neck_2_Pitch~Neck_2_Pitch_body" body2="Roboception"/>
+        <exclude body1="Roboception" body2="VirtualCentralGaze"/>
+    </contact>
+    <actuator>
+        <velocity class="Armar6" joint="X_Platform" name="X_Platform_velocity"/>
+        <velocity class="Armar6" joint="Y_Platform" name="Y_Platform_velocity"/>
+        <velocity class="Armar6" joint="Yaw_Platform" name="Yaw_Platform_velocity"/>
+        <velocity class="Armar6" joint="TorsoJoint" name="TorsoJoint_velocity"/>
+        <velocity class="Armar6" joint="ArmL1_Cla1" name="ArmL1_Cla1_velocity"/>
+        <velocity class="Armar6" joint="ArmL2_Sho1" name="ArmL2_Sho1_velocity"/>
+        <velocity class="Armar6" joint="ArmL3_Sho2" name="ArmL3_Sho2_velocity"/>
+        <velocity class="Armar6" joint="ArmL4_Sho3" name="ArmL4_Sho3_velocity"/>
+        <velocity class="Armar6" joint="ArmL5_Elb1" name="ArmL5_Elb1_velocity"/>
+        <velocity class="Armar6" joint="ArmL6_Elb2" name="ArmL6_Elb2_velocity"/>
+        <velocity class="Armar6" joint="ArmL7_Wri1" name="ArmL7_Wri1_velocity"/>
+        <velocity class="Armar6" joint="ArmL8_Wri2" name="ArmL8_Wri2_velocity"/>
+        <velocity class="Armar6" joint="Index L 1 Joint" name="Index L 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Index L 2 Joint" name="Index L 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="Index L 3 Joint" name="Index L 3 Joint_velocity"/>
+        <velocity class="Armar6" joint="LeftHandFingers" name="LeftHandFingers_velocity"/>
+        <velocity class="Armar6" joint="LeftHandThumb" name="LeftHandThumb_velocity"/>
+        <velocity class="Armar6" joint="Middle L 1 Joint" name="Middle L 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Middle L 2 Joint" name="Middle L 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="Middle L 3 Joint" name="Middle L 3 Joint_velocity"/>
+        <velocity class="Armar6" joint="Pinky L 1 Joint" name="Pinky L 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Pinky L 2 Joint" name="Pinky L 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="Pinky L 3 Joint" name="Pinky L 3 Joint_velocity"/>
+        <velocity class="Armar6" joint="Ring L 1 Joint" name="Ring L 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Ring L 2 Joint" name="Ring L 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="Ring L 3 Joint" name="Ring L 3 Joint_velocity"/>
+        <velocity class="Armar6" joint="Thumb L 1 Joint" name="Thumb L 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Thumb L 2 Joint" name="Thumb L 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="ArmR1_Cla1" name="ArmR1_Cla1_velocity"/>
+        <velocity class="Armar6" joint="ArmR2_Sho1" name="ArmR2_Sho1_velocity"/>
+        <velocity class="Armar6" joint="ArmR3_Sho2" name="ArmR3_Sho2_velocity"/>
+        <velocity class="Armar6" joint="ArmR4_Sho3" name="ArmR4_Sho3_velocity"/>
+        <velocity class="Armar6" joint="ArmR5_Elb1" name="ArmR5_Elb1_velocity"/>
+        <velocity class="Armar6" joint="ArmR6_Elb2" name="ArmR6_Elb2_velocity"/>
+        <velocity class="Armar6" joint="ArmR7_Wri1" name="ArmR7_Wri1_velocity"/>
+        <velocity class="Armar6" joint="ArmR8_Wri2" name="ArmR8_Wri2_velocity"/>
+        <velocity class="Armar6" joint="Index R 1 Joint" name="Index R 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Index R 2 Joint" name="Index R 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="Index R 3 Joint" name="Index R 3 Joint_velocity"/>
+        <velocity class="Armar6" joint="Middle R 1 Joint" name="Middle R 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Middle R 2 Joint" name="Middle R 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="Middle R 3 Joint" name="Middle R 3 Joint_velocity"/>
+        <velocity class="Armar6" joint="Pinky R 1 Joint" name="Pinky R 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Pinky R 2 Joint" name="Pinky R 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="Pinky R 3 Joint" name="Pinky R 3 Joint_velocity"/>
+        <velocity class="Armar6" joint="RightHandFingers" name="RightHandFingers_velocity"/>
+        <velocity class="Armar6" joint="RightHandThumb" name="RightHandThumb_velocity"/>
+        <velocity class="Armar6" joint="Ring R 1 Joint" name="Ring R 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Ring R 2 Joint" name="Ring R 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="Ring R 3 Joint" name="Ring R 3 Joint_velocity"/>
+        <velocity class="Armar6" joint="Thumb R 1 Joint" name="Thumb R 1 Joint_velocity"/>
+        <velocity class="Armar6" joint="Thumb R 2 Joint" name="Thumb R 2 Joint_velocity"/>
+        <velocity class="Armar6" joint="Neck_1_Yaw" name="Neck_1_Yaw_velocity"/>
+        <velocity class="Armar6" joint="Neck_2_Pitch" name="Neck_2_Pitch_velocity"/>
+        <velocity class="Armar6" joint="VirtualCentralGazeDepthCamera" name="VirtualCentralGazeDepthCamera_velocity"/>
+        <velocity class="Armar6" joint="VirtualCentralGaze" name="VirtualCentralGaze_velocity"/>
+    </actuator>
+</mujoco>

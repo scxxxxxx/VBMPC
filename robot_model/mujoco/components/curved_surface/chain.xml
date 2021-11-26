@@ -1,0 +1,5 @@
+<mujocoinclude>
+    <inertial mass="0.405" pos="0 0 0.018" diaginertia="0.001435 0.001435 0.002403"/>
+    <geom type="mesh" mesh="curved_surface" friction="0 0 0" quat="0.7071068 0.7071068 0 0" name="curved_surface"/>
+</mujocoinclude>
+

@@ -1,0 +1,6 @@
+<mujocoinclude>
+    <asset>
+        <texture name="tennis_wall_background" builtin="flat" type="2d" mark="random" markrgb="1 1 1" width="800" height="800" rgb1=".2 .3 .4"/>
+        <material name="tennis_wall_background" texture="tennis_wall_background" texrepeat="1 1" texuniform="true"/>
+    </asset>
+</mujocoinclude>

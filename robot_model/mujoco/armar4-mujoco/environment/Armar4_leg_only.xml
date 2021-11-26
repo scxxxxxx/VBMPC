@@ -1,0 +1,23 @@
+<mujoco model="Armar4">
+    <size njmax="8000" nconmax="4000"/>
+    <include file="../../worlds/world.xml"/>
+    <compiler angle="radian" coordinate="local" balanceinertia="true" inertiafromgeom="auto"  meshdir='../robot/mesh'/>
+    <default>
+        <default class="Armar4">
+            <!--Add default values for Armar4 here.-->
+            <mesh scale="1 1 1"/>
+            <geom condim="4" material='Armar4'/>
+            <joint damping="50" frictionloss="0" />
+            <motor gear="1" ctrllimited="true"/>
+            <velocity kv="200"/>
+            <position kp="200"/>
+        </default>
+    </default>
+    <asset>
+        <material name='Armar4'    rgba='0. 0.588 0.509 1'/>
+        <material name='collision' rgba='0.1 0.5 0.9 0'/>
+        <material name='obstacle'  rgba='0.2 0.6 0.2 1'/>
+    </asset>
+    <include file="../robot/Armar4_leg_only.xml"/>
+
+</mujoco>

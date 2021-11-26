@@ -1,0 +1,119 @@
+<mujoco model='Armar4'>
+    <compiler inertiafromgeom='auto' angle='radian' eulerseq='zyx' meshdir='../robot/mesh'/>
+    <size nuser_actuator='1' nuser_sensor='1' nuser_geom='1'/>
+    <option timestep='0.001' iterations='50' solver='PGS' gravity='0 0 -9.81'/>
+
+    <visual>
+        <quality shadowsize='4096'/>
+        <map znear='0.05'/>
+    </visual>
+
+    <default>
+        <joint limited='true'/>
+        <motor ctrllimited='true'/>
+        <geom condim='1' solref='0.005 1'/>
+        <equality solref='0.005 1'/>
+        <default class='Armar4'>
+            <geom material='Armar4'/>
+            <joint damping="20" frictionloss="0" />
+        </default>
+<!--        <default class='collision'>-->
+<!--            &lt;!&ndash; User parameter for geoms is used to identify collision types &ndash;&gt;-->
+<!--            <geom material='collision' contype='1' user='2'/>-->
+<!--            <default class='collision-left'>-->
+<!--                <geom contype='2' conaffinity='4'/>-->
+<!--            </default>-->
+<!--            <default class='collision-right'>-->
+<!--                <geom contype='4' conaffinity='2'/>-->
+<!--            </default>-->
+<!--        </default>-->
+        <default class='obstacle'>
+            <geom material='obstacle' condim='3' contype='8' conaffinity='15' user='1'/>
+        </default>
+    </default>
+
+    <asset>
+        <texture type='skybox' builtin='gradient' width='128' height='128' rgb1='0.4 0.6 0.8' rgb2='0 0 0'/>
+        <texture name='plane' type='2d' builtin='checker' rgb1='0.2 0.2 0.2' rgb2='0.3 0.3 0.3' width='512' height='512'/>
+        <material name='plane' reflectance='0.0' texture='plane' texrepeat='1 1' texuniform='true'/>
+        <material name='Armar4'    rgba='0. 0.588 0.509 1'/>
+        <material name='collision' rgba='0.1 0.5 0.9 0'/>
+        <material name='obstacle'  rgba='0.2 0.6 0.2 1'/>
+    </asset>
+
+    <include file="../robot/Armar4_simplified.xml"/>
+
+    <worldbody>
+        <geom name='floor' pos='0 0 0' size='5 5 .125' type='plane' material='plane' condim='3'/>
+        <light mode='trackcom' pos='0 0 5' dir='0 0 -1'/>
+        <light directional='true' pos='0 0 3' dir='0 0 -1' diffuse='0.2 0.2 0.2' specular='0 0 0'/>
+
+        <!-- Add any other moving bodies after the Cassie definition-->
+<!--        <body name='box' pos='2 0 0.2'>-->
+<!--            <freejoint/>-->
+<!--            <geom type='box' size='0.1 0.1 0.1' mass='3' class='obstacle'/>-->
+<!--        </body>-->
+
+    </worldbody>
+
+</mujoco>
+
+
+<!--<mujoco model='Armar4'>-->
+<!--    <compiler inertiafromgeom='auto' angle='radian' eulerseq='zyx' meshdir='../robot/mesh'/>-->
+<!--    <size nuser_actuator='1' nuser_sensor='1' nuser_geom='1'/>-->
+<!--    <option timestep='0.001' iterations='50' solver='PGS' gravity='0 0 -9.81'/>-->
+
+<!--    <visual>-->
+<!--        <quality shadowsize='4096'/>-->
+<!--        <map znear='0.05'/>-->
+<!--    </visual>-->
+
+<!--    <default>-->
+<!--        <joint limited='true'/>-->
+<!--        <motor ctrllimited='true'/>-->
+<!--        <geom contype='0' conaffinity='0' condim='1' solref='0.005 1'/>-->
+<!--        <equality solref='0.005 1'/>-->
+<!--        <default class='Armar4'>-->
+<!--            <geom material='Armar4'/>-->
+<!--        </default>-->
+<!--        <default class='collision'>-->
+<!--            &lt;!&ndash; User parameter for geoms is used to identify collision types &ndash;&gt;-->
+<!--            <geom material='collision' contype='1' user='2'/>-->
+<!--            <default class='collision-left'>-->
+<!--                <geom contype='2' conaffinity='4'/>-->
+<!--            </default>-->
+<!--            <default class='collision-right'>-->
+<!--                <geom contype='4' conaffinity='2'/>-->
+<!--            </default>-->
+<!--        </default>-->
+<!--        <default class='obstacle'>-->
+<!--            <geom material='obstacle' condim='3' contype='8' conaffinity='15' user='1'/>-->
+<!--        </default>-->
+<!--    </default>-->
+
+<!--    <asset>-->
+<!--        <texture type='skybox' builtin='gradient' width='128' height='128' rgb1='0.4 0.6 0.8' rgb2='0 0 0'/>-->
+<!--        <texture name='plane' type='2d' builtin='checker' rgb1='0.2 0.2 0.2' rgb2='0.3 0.3 0.3' width='512' height='512'/>-->
+<!--        <material name='plane' reflectance='0.0' texture='plane' texrepeat='1 1' texuniform='true'/>-->
+<!--        <material name='Armar4'    rgba='0. 0.588 0.509 1'/>-->
+<!--        <material name='collision' rgba='0.1 0.5 0.9 0'/>-->
+<!--        <material name='obstacle'  rgba='0.2 0.6 0.2 1'/>-->
+<!--    </asset>-->
+
+<!--    <include file="../robot/Armar4_simplified.xml"/>-->
+
+<!--    <worldbody>-->
+<!--        <geom name='floor' pos='0 0 0' size='5 5 .125' type='plane' material='plane' condim='3' conaffinity='15'/>-->
+<!--        <light mode='trackcom' pos='0 0 5' dir='0 0 -1'/>-->
+<!--        <light directional='true' pos='0 0 3' dir='0 0 -1' diffuse='0.2 0.2 0.2' specular='0 0 0'/>-->
+
+<!--        &lt;!&ndash; Add any other moving bodies after the Cassie definition&ndash;&gt;-->
+<!--        <body name='box' pos='2 0 0.2'>-->
+<!--            <freejoint/>-->
+<!--            <geom type='box' size='0.1 0.1 0.1' mass='3' class='obstacle'/>-->
+<!--        </body>-->
+
+<!--    </worldbody>-->
+
+<!--</mujoco>-->

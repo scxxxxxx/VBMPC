@@ -1,0 +1,107 @@
+<mujocoinclude>
+    <default class="main">
+        <geom friction="1 0.005 0.0001" />
+        <joint damping="0.5" stiffness="0" armature="0.5" />
+        <position kp="100" />
+
+        <default class="body">
+        </default>
+
+        <!-- Default class for end-effector visualizations -->
+        <default class="endeffector">
+            <geom rgba="0 1 0 1" pos="0 0 0" size="0.005" type="sphere" conaffinity="0" contype="0"/>
+        </default>
+
+        <!-- Default class for target visualizations -->
+        <default class="target">
+            <geom rgba="1 0 0 1" pos="0 0 0" size="0.005" type="sphere" conaffinity="0" contype="0"/>
+        </default>
+    </default>
+
+
+    <asset>
+        <mesh file="../robot/mesh/01_basis_m.stl" name="m_base" />
+        <mesh file="../robot/mesh/02_pg_basis_m.stl" name="m_pg_base" />
+        <mesh file="../robot/mesh/02_pg_arm1_m.stl" name="m_pg_arm1" />
+        <mesh file="../robot/mesh/02_pg_arm2_m.stl" name="m_pg_arm2" />
+        <mesh file="../robot/mesh/02_pg_pad_m.stl" name="m_pg_pad" />
+        <mesh file="../robot/mesh/03_turn_m.stl" name="m_turn" />
+        <mesh file="../robot/mesh/04_arm1_m.stl" name="m_arm1" />
+        <mesh file="../robot/mesh/05_arm2_m.stl" name="m_arm2" />
+        <mesh file="../robot/mesh/06_arm3_m.stl" name="m_arm3" />
+        <mesh file="../robot/mesh/06_bithalt_m.stl" name="m_bit" />
+    </asset>
+
+    <worldbody>
+        <body name="base" pos="0 0 0.04" quat=".707 .707 0 0" childclass="body">
+            <geom type="mesh" mesh="m_base"/>
+
+            <body name="arm1" pos="0.065 0.106 0.0195" quat="0 1 0 0" childclass="body">
+                <geom type="mesh" mesh="m_turn" contype="0" conaffinity="0"/>
+                <joint name="KIT_Gripper_Arm_1" axis="0 1 0" limited="true" range="-90 180" />
+
+                <body name="arm2">
+                    <joint name="KIT_Gripper_Arm_2" axis="0 0 1" limited="true" range="-90 90" />
+                    <geom type="mesh" mesh="m_arm1" />
+
+                    <body name="arm3" pos="0.0848528 -0.0848528 0" quat="0.9239 0 0 -0.3827">
+                        <joint name="KIT_Gripper_Arm_3" axis="0 0 1" limited="true" range="-90 90" />
+                        <geom type="mesh" mesh="m_arm2" />
+
+                        <body name="arm4" pos="0 0.120 0" quat="0.9239 0 0 -0.3827">
+                            <geom type="mesh" mesh="m_arm3"/>
+                            <joint name="KIT_Gripper_Arm_4" axis="0 0 1" limited="true" range="-90 90" />
+
+                            <body name="bit" pos="-0.0425 0.030 0.013" quat="0.5 -0.5 -0.5 0.5">
+                                <geom type="mesh" mesh="m_bit"/>
+                                <!--<joint name="KIT_Gripper_Arm_Bit" axis="0 0 1" />-->
+
+                                <body name="KIT_Gripper_Arm_Bit_TCP" pos="0 0 0.0233">
+                                    <geom class="endeffector" />
+                                    <site name="Gripper_TCP" pos="0 0 0" quat="1 0 0 0"/>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <position joint="KIT_Gripper_Arm_1" name="KIT_Gripper_Arm_1_pos"/>
+        <position joint="KIT_Gripper_Arm_2" name="KIT_Gripper_Arm_2_pos"/>
+        <position joint="KIT_Gripper_Arm_3" name="KIT_Gripper_Arm_3_pos"/>
+        <position joint="KIT_Gripper_Arm_4" name="KIT_Gripper_Arm_4_pos"/>
+
+
+        <velocity joint="KIT_Gripper_Arm_1" name="KIT_Gripper_Arm_1_vel"/>
+        <velocity joint="KIT_Gripper_Arm_2" name="KIT_Gripper_Arm_2_vel"/>
+        <velocity joint="KIT_Gripper_Arm_3" name="KIT_Gripper_Arm_3_vel"/>
+        <velocity joint="KIT_Gripper_Arm_4" name="KIT_Gripper_Arm_4_vel"/>
+
+
+        <motor joint="KIT_Gripper_Arm_1" name="KIT_Gripper_Arm_1_torque"/>
+        <motor joint="KIT_Gripper_Arm_2" name="KIT_Gripper_Arm_2_torque"/>
+        <motor joint="KIT_Gripper_Arm_3" name="KIT_Gripper_Arm_3_torque"/>
+        <motor joint="KIT_Gripper_Arm_4" name="KIT_Gripper_Arm_4_torque"/>
+    </actuator>
+
+    <sensor>
+<!--        <jointpos name="KIT_Gripper_Arm_1_pos" joint="KIT_Gripper_Arm_1" />-->
+<!--        <jointpos name="KIT_Gripper_Arm_2_pos" joint="KIT_Gripper_Arm_2" />-->
+<!--        <jointpos name="KIT_Gripper_Arm_3_pos" joint="KIT_Gripper_Arm_3" />-->
+<!--        <jointpos name="KIT_Gripper_Arm_4_pos" joint="KIT_Gripper_Arm_4" />-->
+
+
+<!--        <jointvel name="KIT_Gripper_Arm_1_vel" joint="KIT_Gripper_Arm_1" />-->
+<!--        <jointvel name="KIT_Gripper_Arm_2_vel" joint="KIT_Gripper_Arm_2" />-->
+<!--        <jointvel name="KIT_Gripper_Arm_3_vel" joint="KIT_Gripper_Arm_3" />-->
+<!--        <jointvel name="KIT_Gripper_Arm_4_vel" joint="KIT_Gripper_Arm_4" />-->
+
+        <actuatorfrc name="KIT_Gripper_Arm_1_torque" actuator="KIT_Gripper_Arm_1_torque" />
+        <actuatorfrc name="KIT_Gripper_Arm_2_torque" actuator="KIT_Gripper_Arm_2_torque" />
+        <actuatorfrc name="KIT_Gripper_Arm_3_torque" actuator="KIT_Gripper_Arm_3_torque" />
+        <actuatorfrc name="KIT_Gripper_Arm_4_torque" actuator="KIT_Gripper_Arm_4_torque" />
+    </sensor>
+</mujocoinclude>

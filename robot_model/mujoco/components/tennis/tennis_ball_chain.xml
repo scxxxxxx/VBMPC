@@ -1,0 +1,6 @@
+
+<mujocoinclude>
+      <freejoint name="ball_root"/>
+      <geom name="tennis_ball" class="bouncy" size="0.0335" material="tennis_ball" mass="0.0577"/>
+      <light name="ball_light" pos="0 0 4" mode="trackcom"/>
+</mujocoinclude>

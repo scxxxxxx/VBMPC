@@ -1,0 +1,6 @@
+<mujoco model="Armar4">
+    <size njmax="8000" nconmax="4000"/>
+    <include file="../../worlds/world.xml"/>
+    <compiler angle="radian" coordinate="local" balanceinertia="true" inertiafromgeom="auto" settotalmass="2.3"/>
+    <include file="../robot/Armar4_float_base.xml"/>
+</mujoco>

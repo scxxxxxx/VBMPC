@@ -1,0 +1,13 @@
+<mujocoinclude>
+
+	<asset>
+		<texture name="marble2d" type="2d" file="../../components/texture/marble.png"/>
+		<texture name="marblecube" type="cube" file="../../components/texture/marble.png"/>
+        <texture name="texwood" type="2d" file="../../components/texture/wood.png"/>
+
+        <material name="tablewood" texture="texwood" rgba=".7 .7 .7 1"/>
+		<material name="table2d" texture="marble2d" reflectance="0.3" rgba=".8 .8 .8 1"/>
+		<material name="tablecube" texture="marblecube" rgba=".8 .8 .8 1"/>
+	</asset>
+	
+</mujocoinclude>

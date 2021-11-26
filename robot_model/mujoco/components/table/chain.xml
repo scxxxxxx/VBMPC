@@ -1,0 +1,17 @@
+<!-- ======================================================
+Table
+
+the center of the top surface of the table is at (0,0,0)
+with size
+x: 2.4 m
+y: 1.0 m
+====================================================== -->
+<mujocoinclude>
+	<!--<geom contype="1" conaffinity="1" type="plane" material="table2d" pos="0 0 0" size=".5 .5 .025"/>-->
+	<!--	<geom contype="1" conaffinity="1" type="box" material="tablecube" pos="0 0 -0.025" size=".8 .5 .025"/>-->
+	<geom condim="6" contype="1" conaffinity="1" type="box" group="1" material="table2d" pos="0 0 -0.025" size="1.2 .5 .025"/>
+	<geom contype="0" conaffinity="0" type="cylinder" fromto="1.0 .4 -1.0 1.0 .4 -0.001" size="0.04"/>
+	<geom contype="0" conaffinity="0" type="cylinder" fromto="-1.0 .4 -1.0 -1.0 .4 -0.001" size="0.04"/>
+	<geom contype="0" conaffinity="0" type="cylinder" fromto="1.0 -.4 -1.0 1.0 -.4 -0.001" size="0.04"/>
+	<geom contype="0" conaffinity="0" type="cylinder" fromto="-1.0 -.4 -1.0 -1.0 -.4 -0.001" size="0.04"/>
+</mujocoinclude>

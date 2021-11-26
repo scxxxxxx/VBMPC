@@ -1,0 +1,100 @@
+#
+# python test_imppi.py -t
+#
+algorithm:                  IMPPI
+agent:
+    # AgentConfig
+    env_name:               GymPendulumEnv
+    env_config:             { render: True, action_wrapper: False, make: False }
+    twin_env_type:          MLPDyn
+    #twin_env_type:          MLPDynRew
+    ac_type:                MLPAC
+    seed:                   123
+    use_gpu:                True
+    render_every_n_rollout: 1
+
+    rollout_steps:          500
+    max_steps:              6000
+    batch_size:             250
+    train_mini_epochs:      20
+    # max_grad_norm:          0.5
+    buffer_size:            100000
+
+    # IMPPI
+    env_init_state:         [3.14159265354, 1]
+    frame_skip:             4
+
+    #    num_rollouts:           100
+    #    horizon:                15
+    #    lambda:                 1.0
+    #    a_init:                 [0.0]
+    #    noise_sigma:            [1.0]
+
+    retrain_steps:          50
+    bootstrap_steps:        100
+
+    policy_type:            VBMPCPolicy
+
+policy:
+    policy_type:            VBMPCPolicy
+
+    model_type:             imppi
+    model_config:           {}
+
+    time_dependency:        False
+    actions_per_update:     1
+    horizon:                15
+    num_rollouts:           100
+    samples_per_rollout:    10
+    lamb:                   1.0
+    noise_sigma:            [1.0]
+    a_init:                 [0.0]
+    a_scale:                1
+
+    rollout_var_cost:       0
+    rollout_cost_discount:  1.0
+    rollout_var_discount:   0.95
+    sample_null_action:     False
+
+dynamics_train:
+    lr:                     0.001
+    l1_norm:                False
+    prune:                  False
+
+twin_env:
+    #type:                   dyn_rew
+    type:                   dyn
+    network_type:           mlp
+    network_act:
+        dyn:                Tanh
+        rew:                ReLU
+    dyn_struct:             [ 32, 32 ]
+    rew_struct:             [ 32, 32 ]
+    std:                    0.
+
+ac_model:
+    type:                   ac
+    network_type:           FNN
+    use_gpu:                1
+    ac_struct:             [ 32, 32 ]
+    ac_act:
+        act:                ReLU
+        cri:                ReLU
+    std:                    0.
+
+#    optimizer_type:         Adam
+#    optimizer_config:
+#        lr:                 0.001
+#    scheduler_type:         ReduceLROnPlateau
+#    scheduler_config:
+#        patience:           10
+#        min_lr:             1e-6
+#        factor:             0.5
+#        verbose:            False
+
+
+#value:
+#    type: fnn
+#    use_gpu: 1
+#    structure: [ 32, 32 ]
+#    activation: relu

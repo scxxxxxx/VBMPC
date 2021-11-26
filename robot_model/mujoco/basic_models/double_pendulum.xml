@@ -1,0 +1,39 @@
+<mujoco model="double_pendulum">
+    <include file="../worlds/world.xml"/>
+    <compiler coordinate="local" inertiafromgeom="true"/>
+    <default>
+        <joint damping="0"/>
+        <!--<geom contype="0" friction="1 0.1 0.1"/>-->
+        <geom contype="0" friction="0 0 0"/>
+    </default>
+    <option gravity="0 0 -9.81" integrator="RK4"/>
+    <size nstack="3000"/>
+    <worldbody>
+        <geom name="rail" pos="0 0 1.5" quat="0.707 0 0.707 0" rgba="0.3 0.3 0.7 1" size="0.02 1" type="capsule"/>
+        <body name="pole0" pos="0 0 1.5">
+            <camera name="track_front" mode="fixed" pos="0 4 0" xyaxes="-1 0 0 0 0 1"/>
+            <!--<joint axis="1 0 0" limited="true" margin="0.01" name="slider" pos="0 0 0" range="-1 1" type="slide"/>-->
+            <geom name="geom_b0" pos="0 0 0" quat="0.707 0 0.707 0" size="0.1 0.1" type="capsule" rgba="0.7 0.7 0 1"/>
+            <site name="pole0_0" pos="0 0 0" size="0.01 0.01"/>
+            <site name="pole0_1" pos="0 0 0" size="0.01 0.01"/>
+            <body name="pole1" pos="0 0 0">
+                <joint axis="0 1 0" name="pendulum1" pos="0 0 0" type="hinge"/>
+                <geom fromto="0 0 0 0 0 0.7" name="cpole1" rgba="0.588 0.909 0.972 1" size="0.045 0.35" type="capsule" mass="2"/>
+                <site name="pole1_0" pos="0 0 0" size="0.01 0.01"/>
+                <site name="pole1_1" pos="0 0 .7" size="0.01 0.01"/>
+                <body name="pole2" pos="0 0 0.7">
+                    <joint axis="0 1 0" name="pendulum2" pos="0 0 0" type="hinge"/>
+                    <geom fromto="0 0 0 0 0 0.6" name="cpole2" rgba="0.588 0.909 0.972 1" size="0.045 0.3" type="capsule" mass="1"/>
+                    <site name="tip" pos="0 0 .6" size="0.01 0.01"/>
+                    <site name="pole2_0" pos="0 0 0" size="0.01 0.01"/>
+                    <site name="pole2_1" pos="0 0 0.6" size="0.01 0.01"/>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <!--<motor ctrllimited="true" ctrlrange="-1 1" gear="500" joint="slider" name="slide"/>-->
+        <motor name="pendulum1_motor" joint="pendulum1" forcerange="-50 50" ctrlrange="-20 20"/>
+        <motor name="pendulum2_motor" joint="pendulum2" forcerange="-50 50" ctrlrange="-20 20"/>
+    </actuator>
+</mujoco>

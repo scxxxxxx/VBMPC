@@ -1,0 +1,24 @@
+<mujoco model="Armar6">
+    <size njmax="8000" nconmax="4000"/>
+    <asset>
+        <texture name="texsponge" type="2d" file="../../basic-models/sponge.png"/>
+        <material name="matsponge" texture="texsponge" specular="0.3"/>
+    </asset>
+
+    <include file="../../worlds/world.xml"/>
+    <compiler angle="radian" coordinate="local" balanceinertia="true" inertiafromgeom="auto" settotalmass="2.3"/>
+    <include file="../robot/Armar6-SH-Right-Arm-Only.xml"/>
+    <include file="../../components/table/asset.xml"/>
+    <worldbody>
+        <body pos="0 1 2.5">
+            <freejoint/>
+            <composite type="box" count="7 7 7" spacing="0.03">
+                <skin texcoord="true" material="matsponge" rgba=".7 .7 .7 1"/>
+                <geom type="capsule" size=".015 0.05" rgba=".8 .2 .1 1"/>
+            </composite>
+        </body>
+        <body name="Table" pos="0 1 0.9">
+			<include file="../../components/table/chain.xml"/>
+		</body>
+    </worldbody>
+</mujoco>

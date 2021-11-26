@@ -1,0 +1,66 @@
+#
+# python trainer.py -c ./config/mppi_eql.yaml -p ./trained_model/
+#
+mpc:
+    use_gpu:            1
+    env_name:           GymPendulumEnv
+    env_init_state:     [3.14159265354, 1]
+    frame_skip:         4
+    render:             True
+    seed:               123
+
+    mpc_method:         mppi
+    num_rollouts:       100
+    horizon:            15
+    lambda:             1.0
+    a_init:             [0.0]
+    noise_sigma:        [1.0]
+
+    max_frames:         6000
+    max_epoch_steps:    500
+    bootstrap_steps:    100
+    retrain_steps:      50
+    model_lr:           1e-3
+    model_iter:         20
+    batch_size:         250
+    replay_buffer_size: 100000
+    l1_norm:            True
+    prune:              True
+
+dynamics:
+    use_gpu: 1
+    type: eql
+    in_feats: 1
+    structures:
+        - { ide: 5, sin: 10, cos: 10, mul: 5, mul_mode: 2 }
+        # - { ide: 32, sin: 32, cos: 32, mul: 0, mul_mode: 2 }
+        # - {ide: 1, div: 1, div_mode: 2}
+        - { ide: 1 }
+
+    lamb: 1e-5
+    theta: 0.5
+    std: 0.
+
+    omega: 30
+    freq_bias: neuron
+#    omega: 100
+#    freq_bias: neuron
+#    omega: 1
+#    freq_bias: None
+
+    train:
+        pruning: True
+
+
+value:
+    use_gpu: 1
+    type: fnn
+    structure: [ 32, 32 ]
+    activation: relu
+
+    #  # qcnn
+    #  structure: [ 30, 30 ]
+    #  use_quasi_convex: True
+    #  strict_quasi: False
+    #  with_gate: True
+    #  require_input_grad: True

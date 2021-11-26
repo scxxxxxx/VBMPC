@@ -1,0 +1,21 @@
+<mujoco model="pendulum">
+    <include file="../worlds/world.xml"/>
+    <compiler coordinate="local" inertiafromgeom="true"/>
+    <default>
+        <joint damping="0"/>
+        <geom contype="0" friction="0 0 0"/>
+    </default>
+    <option gravity="0 0 -9.81" integrator="RK4"/>
+    <size nstack="3000"/>
+    <worldbody>
+        <geom name="rail" pos="0 0 1.5" quat="0.707 0 0.707 0" rgba="0.3 0.3 0.7 1" size="0.02 1" type="capsule"/>
+        <body name="pole0" pos="0 0 1.5">
+            <camera name="track_front" mode="fixed" pos="0 4 0" xyaxes="-1 0 0 0 0 1"/>
+            <!--<joint axis="1 0 0" limited="true" margin="0.01" name="slider" pos="0 0 0" range="-1 1" type="slide"/>-->
+            <geom name="geom_b0" pos="0 0 0" quat="0.707 0 0.707 0" size="0.1 0.01" type="capsule" rgba="0.7 0.7 0 1"/>
+            <site name="pole0_0" pos="0 0 0" size="0.01 0.01"/>
+            <site name="pole0_1" pos="0 0 0" size="0.01 0.01"/>
+
+        <body name="pole1" pos="0 0 0"><geom name="geom_b1" fromto="0 0 0 0 0 0.5663447521227173" rgba="0.588 0.909 0.972 1" size="0.045 0.28317237606135864" type="capsule" mass="0.6259123989855022"/><site name="pole1_0" pos="0 0 0" size="0.01 0.01"/><site name="pole1_1" pos="0 0 0.5663447521227173" size="0.01 0.01"/><joint name="pendulum1" axis="0 1 0" pos="0 0 0" type="hinge"/><body name="pole2" pos="0 0 0.5663447521227173"><geom name="geom_b2" fromto="0 0 0 0 0 0.402697829591111" rgba="0.588 0.909 0.972 1" size="0.045 0.2013489147955555" type="capsule" mass="0.824366801039383"/><site name="pole2_0" pos="0 0 0" size="0.01 0.01"/><site name="pole2_1" pos="0 0 0.402697829591111" size="0.01 0.01"/><site name="tip" pos="0 0 0.402697829591111" size="0.01 0.01"/><joint name="pendulum2" axis="0 1 0" pos="0 0 0" type="hinge"/></body></body></body>
+    </worldbody>
+<actuator><motor name="pendulum1_motor" joint="pendulum1" forcerange="-50 50" ctrlrange="-20 20"/><motor name="pendulum2_motor" joint="pendulum2" forcerange="-50 50" ctrlrange="-20 20"/></actuator></mujoco>

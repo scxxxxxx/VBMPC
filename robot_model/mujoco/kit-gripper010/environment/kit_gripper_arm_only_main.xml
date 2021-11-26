@@ -1,0 +1,6 @@
+<mujoco model="KITGripper">
+    <size njmax="8000" nconmax="4000"/>
+    <include file="../../world.xml"/>
+    <compiler angle="radian" coordinate="local" balanceinertia="true" inertiafromgeom="auto" settotalmass="2.3"/>
+    <include file="../robot/kit_gripper_arm_only_2.xml"/>
+</mujoco>

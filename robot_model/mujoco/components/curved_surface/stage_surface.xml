@@ -1,0 +1,8 @@
+<mujocoinclude>
+
+    <inertial mass="0.405" pos="0 0 0.018" diaginertia="0.001435 0.001435 0.002403"/>
+    <geom contype="1" conaffinity="1" type="box" material="tablewood" pos="0.21 0 -0.03" euler="0 0.51 0" size="0.2 .5 .02"/>
+    <geom contype="1" conaffinity="1" type="box" material="tablewood" pos="-0.21 0 -0.03" euler="0 -0.51 0" size="0.2 .5 .02"/>
+    <geom contype="1" conaffinity="1" type="cylinder" material="tablewood" pos="0 0 0" euler="1.5708 0 0" size="0.1 .5"/>
+
+</mujocoinclude>
